@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('socios', function () {
+    return view('socios.socios');
+});
+
+Route::resource("socios",\App\Http\Controllers\SocioController::class);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
