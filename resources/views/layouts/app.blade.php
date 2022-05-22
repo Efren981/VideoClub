@@ -52,9 +52,19 @@
                                 </li>
                             @endif
                         @else
+
+                            <li class="nav-item">
+                              <a href="{{url("registro_personas")}}" class="nav-link @yield("personas_active")" data-toggle="tooltip" title="Ir a la seccion de personas">Personas</a>
+                            </li>
+
                             <li class="nav-item">
                               <a href="{{url("socios")}}" class="nav-link @yield("socios_active")" data-toggle="tooltip" title="Ir a la seccion de socios">Socios</a>
                             </li>
+
+                            <li class="nav-item">
+                              <a href="{{url("registro_director")}}" class="nav-link @yield("directores_active")" data-toggle="tooltip" title="Ir a la seccion de socios">Directores</a>
+                            </li>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

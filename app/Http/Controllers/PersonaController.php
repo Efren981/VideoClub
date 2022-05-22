@@ -14,7 +14,8 @@ class PersonaController extends Controller
      */
     public function index()
     {
-        //
+        $datos=Persona::all();
+        return view("Personas.index",compact("datos"));
     }
 
     /**
@@ -24,7 +25,7 @@ class PersonaController extends Controller
      */
     public function create()
     {
-        //
+        return view("Personas.create");
     }
 
     /**
@@ -35,7 +36,13 @@ class PersonaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Persona:: create([
+        "nombre_p" =>$request->nombre_p,
+        "ap_p" =>$request->ap_p,
+        "am_p" =>$request->am_p,
+        "tipo" =>$request->tipo,
+        ]);
+      return redirect()->route("registro_personas.index");
     }
 
     /**
@@ -55,9 +62,9 @@ class PersonaController extends Controller
      * @param  \App\Models\Persona  $persona
      * @return \Illuminate\Http\Response
      */
-    public function edit(Persona $persona)
+    public function edit(Persona $registro_persona)
     {
-        //
+        return view("Personas.update",compact("registro_persona"));
     }
 
     /**
@@ -67,9 +74,13 @@ class PersonaController extends Controller
      * @param  \App\Models\Persona  $persona
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Persona $persona)
+    public function update(Request $request, Persona $registro_persona)
     {
-        //
+      $registro_persona->update(["nombre_p"=>$request->nombre_p,
+      "ap_p"=>$request->ap_p,
+      "am_p"=>$request->am_p,
+      "tipo"=>$request->tipo]);
+      return redirect()->route("registro_personas.index");
     }
 
     /**
@@ -78,8 +89,9 @@ class PersonaController extends Controller
      * @param  \App\Models\Persona  $persona
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Persona $persona)
+    public function destroy(Persona $registro_persona)
     {
-        //
+        $registro_persona->delete();
+        return redirect()->route("registro_personas.index");
     }
 }

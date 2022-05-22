@@ -53,9 +53,19 @@
                                 </li>
                             <?php endif; ?>
                         <?php else: ?>
+
+                            <li class="nav-item">
+                              <a href="<?php echo e(url("registro_personas")); ?>" class="nav-link <?php echo $__env->yieldContent("personas_active"); ?>" data-toggle="tooltip" title="Ir a la seccion de personas">Personas</a>
+                            </li>
+
                             <li class="nav-item">
                               <a href="<?php echo e(url("socios")); ?>" class="nav-link <?php echo $__env->yieldContent("socios_active"); ?>" data-toggle="tooltip" title="Ir a la seccion de socios">Socios</a>
                             </li>
+
+                            <li class="nav-item">
+                              <a href="<?php echo e(url("registro_director")); ?>" class="nav-link <?php echo $__env->yieldContent("directores_active"); ?>" data-toggle="tooltip" title="Ir a la seccion de socios">Directores</a>
+                            </li>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <?php echo e(Auth::user()->name); ?>

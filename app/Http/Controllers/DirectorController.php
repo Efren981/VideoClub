@@ -14,7 +14,8 @@ class DirectorController extends Controller
      */
     public function index()
     {
-        //
+      $datos=Director::all();
+      return view("director.index",compact("datos"));
     }
 
     /**
@@ -24,7 +25,7 @@ class DirectorController extends Controller
      */
     public function create()
     {
-        //
+        return view("director.create");
     }
 
     /**
@@ -35,7 +36,11 @@ class DirectorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Director:: create([
+        "nombre_art" =>$request->nombre_art,
+        "id_persona" =>$request->id_persona,
+        ]);
+      return redirect()->route("registro_director.index");
     }
 
     /**
@@ -55,9 +60,9 @@ class DirectorController extends Controller
      * @param  \App\Models\Director  $director
      * @return \Illuminate\Http\Response
      */
-    public function edit(Director $director)
+    public function edit(Director $registro_director)
     {
-        //
+        return view("director.update",compact("registro_director"));
     }
 
     /**
@@ -67,9 +72,11 @@ class DirectorController extends Controller
      * @param  \App\Models\Director  $director
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Director $director)
+    public function update(Request $request, Director $registro_director)
     {
-        //
+      $registro_director->update(["nombre_art"=>$request->nombre_art,
+      "id_persona"=>$request->id_persona]);
+      return redirect()->route("registro_director.index");
     }
 
     /**
@@ -78,8 +85,9 @@ class DirectorController extends Controller
      * @param  \App\Models\Director  $director
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Director $director)
+    public function destroy(Director $registro_director)
     {
-        //
+      $registro_director->delete();
+      return redirect()->route("registro_director.index");
     }
 }
