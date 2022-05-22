@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Cinta extends Model
 {
     use HasFactory;
+    protected $table="cintas";
+    protected $primaryKey="id_cinta";
+    protected $fillable=['codigo'];
+    public $timestamps=false;
 }

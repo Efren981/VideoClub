@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CintaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +26,9 @@ Route::resource("socios",\App\Http\Controllers\SocioController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('/cintas',CintaController::class);
+
+Route::resource('/peliculas',PeliculaController::class);
+
+
