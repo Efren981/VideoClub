@@ -1,15 +1,7 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cintas</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" crossorigin="anonymous">
-</head>
-<body>
+<?php $__env->startSection("cinta"); ?>
+  active
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection("content"); ?>
 <div class="container">
     <h4>Gestion Cintas</h4>
     <div class="row">
@@ -61,6 +53,6 @@
         </div>
     </div>
 </div>
-</body>
-</html>
-<?php /**PATH /home/efren/Documentos/Proyectos_php/VideoClub/resources/views/cinta/index.blade.php ENDPATH**/ ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/efren/Documentos/Proyectos_php/VideoClub/resources/views/cinta/index.blade.php ENDPATH**/ ?>
