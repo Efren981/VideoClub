@@ -65,6 +65,18 @@
                               <a href="{{url("registro_director")}}" class="nav-link @yield("directores_active")" data-toggle="tooltip" title="Ir a la seccion de socios">Directores</a>
                             </li>
 
+                            <li class="nav-item">
+                              <a href="{{url("registro_genero")}}" class="nav-link @yield("Genero_active")" data-toggle="tooltip" title="Ir a la seccion de generos">Generos</a>
+                            </li>
+
+                            <li class="nav-item">
+                              <a href="{{url("peliculas")}}" class="nav-link @yield("pelicula_active")" data-toggle="tooltip" title="Ir a la seccion de peliculas">Peliculas</a>
+                            </li>
+
+                            <li class="nav-item">
+                              <a href="{{url("cintas")}}" class="nav-link @yield("cintas_active")" data-toggle="tooltip" title="Ir a la seccion de cintas">Cintas</a>
+                            </li>
+                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

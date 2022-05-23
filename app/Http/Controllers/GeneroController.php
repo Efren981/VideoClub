@@ -14,7 +14,8 @@ class GeneroController extends Controller
      */
     public function index()
     {
-        //
+        $datos=Genero::all();
+        return view('Genero.index',compact('datos'));
     }
 
     /**
@@ -24,7 +25,7 @@ class GeneroController extends Controller
      */
     public function create()
     {
-        //
+        return view('Genero.create');
     }
 
     /**
@@ -35,7 +36,10 @@ class GeneroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Genero:: create([
+        "descripcion_g" =>$request->descripcion_g,
+        ]);
+      return redirect()->route("registro_genero.index");
     }
 
     /**
@@ -55,9 +59,9 @@ class GeneroController extends Controller
      * @param  \App\Models\Genero  $genero
      * @return \Illuminate\Http\Response
      */
-    public function edit(Genero $genero)
+    public function edit(Genero $registro_genero)
     {
-        //
+        return view('Genero.update',compact("registro_genero"));
     }
 
     /**
@@ -67,9 +71,10 @@ class GeneroController extends Controller
      * @param  \App\Models\Genero  $genero
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Genero $genero)
+    public function update(Request $request, Genero $registro_genero)
     {
-        //
+      $registro_genero->update(["descripcion_g"=>$request->descripcion_g]);
+      return redirect()->route("registro_genero.index");
     }
 
     /**
@@ -78,8 +83,9 @@ class GeneroController extends Controller
      * @param  \App\Models\Genero  $genero
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Genero $genero)
+    public function destroy(Genero $registro_genero)
     {
-        //
+      $registro_genero->delete();
+      return redirect()->route("registro_genero.index");
     }
 }

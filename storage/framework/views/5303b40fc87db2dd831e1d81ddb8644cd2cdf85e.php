@@ -66,6 +66,18 @@
                               <a href="<?php echo e(url("registro_director")); ?>" class="nav-link <?php echo $__env->yieldContent("directores_active"); ?>" data-toggle="tooltip" title="Ir a la seccion de socios">Directores</a>
                             </li>
 
+                            <li class="nav-item">
+                              <a href="<?php echo e(url("registro_genero")); ?>" class="nav-link <?php echo $__env->yieldContent("Genero_active"); ?>" data-toggle="tooltip" title="Ir a la seccion de generos">Generos</a>
+                            </li>
+
+                            <li class="nav-item">
+                              <a href="<?php echo e(url("peliculas")); ?>" class="nav-link <?php echo $__env->yieldContent("pelicula_active"); ?>" data-toggle="tooltip" title="Ir a la seccion de peliculas">Peliculas</a>
+                            </li>
+
+                            <li class="nav-item">
+                              <a href="<?php echo e(url("cintas")); ?>" class="nav-link <?php echo $__env->yieldContent("cintas_active"); ?>" data-toggle="tooltip" title="Ir a la seccion de cintas">Cintas</a>
+                            </li>
+                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <?php echo e(Auth::user()->name); ?>

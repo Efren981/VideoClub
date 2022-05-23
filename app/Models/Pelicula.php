@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Pelicula extends Model
 {
     use HasFactory;
+    protected $table="peliculas";
+    protected $primaryKey="id_pelicula";
+    protected $fillable=['titulo','id_genero'];
+    public $timestamps=false;
 }

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +21,12 @@ Route::resource("socios",\App\Http\Controllers\SocioController::class);
 Route::resource("registro_personas",\App\Http\Controllers\PersonaController::class);
 
 Route::resource("registro_director",\App\Http\Controllers\DirectorController::class);
+
+Route::resource("registro_genero",\App\Http\Controllers\GeneroController::class);
+
+Route::resource('cintas',\App\Http\Controllers\CintaController::class);
+
+Route::resource('peliculas',\App\Http\Controllers\PeliculaController::class);
 
 Auth::routes();
 

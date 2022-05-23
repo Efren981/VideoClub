@@ -14,7 +14,8 @@ class CintaController extends Controller
      */
     public function index()
     {
-        //
+        $cintas=Cinta::all();
+        return view('cinta.index',compact('cintas'));
     }
 
     /**
@@ -24,7 +25,7 @@ class CintaController extends Controller
      */
     public function create()
     {
-        //
+        return  view('cinta.create');
     }
 
     /**
@@ -35,7 +36,11 @@ class CintaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cinta=new Cinta;
+        $cinta->id_cinta=$request->input('id_cinta');
+        $cinta->id_pelicula=$request->input('id_pelicula');
+        $cinta->save();
+        return redirect()->route('cintas.index');
     }
 
     /**
@@ -46,7 +51,7 @@ class CintaController extends Controller
      */
     public function show(Cinta $cinta)
     {
-        //
+
     }
 
     /**
@@ -57,7 +62,8 @@ class CintaController extends Controller
      */
     public function edit(Cinta $cinta)
     {
-        //
+        $cinta=Cinta::findOrFail($id_cinta);
+        return view('cinta.edit',compact('cinta'));
     }
 
     /**
@@ -69,7 +75,11 @@ class CintaController extends Controller
      */
     public function update(Request $request, Cinta $cinta)
     {
-        //
+        $cinta=Cinta::findOrFail($id_cinta);
+        $cinta->id_cinta=$request->input('id_cinta');
+        $cinta->id_pelicula=$request->input('id_pelicula');
+        $cinta->save();
+        return redirect()->route('cintas.index');
     }
 
     /**
@@ -80,6 +90,8 @@ class CintaController extends Controller
      */
     public function destroy(Cinta $cinta)
     {
-        //
+        $cinta=Cinta::findOrFail($id_cinta);
+        $cinta->delete();
+        return redirect()->route('cintas.index');
     }
 }
