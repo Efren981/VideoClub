@@ -14,6 +14,8 @@ class DevolucionController extends Controller
      */
     public function index()
     {
+        $datos=Devolucion::all();
+        return view("devoluciones.index",compact("datos"));
         //
     }
 
@@ -24,6 +26,7 @@ class DevolucionController extends Controller
      */
     public function create()
     {
+        return view("devoluciones.create");
         //
     }
 
@@ -35,6 +38,10 @@ class DevolucionController extends Controller
      */
     public function store(Request $request)
     {
+        Devolucion:: create(["id_detalle__prestamos"=>$request->id_detalle__prestamos,
+            "fecha_devolucion"=>$request->fecha_devolucion,
+            "observaciones"=>$request->observaciones]);
+        return redirect()->route("devoluciones.index");
         //
     }
 
@@ -46,6 +53,7 @@ class DevolucionController extends Controller
      */
     public function show(Devolucion $devolucion)
     {
+
         //
     }
 
@@ -55,8 +63,10 @@ class DevolucionController extends Controller
      * @param  \App\Models\Devolucion  $devolucion
      * @return \Illuminate\Http\Response
      */
-    public function edit(Devolucion $devolucion)
+    public function edit(Devolucion $devolucione)
     {
+
+        return view('devoluciones.edit',compact("devolucione"));
         //
     }
 
@@ -67,8 +77,12 @@ class DevolucionController extends Controller
      * @param  \App\Models\Devolucion  $devolucion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Devolucion $devolucion)
+    public function update(Request $request, Devolucion $devolucione)
     {
+        $devolucione->update(['id_detalle__prestamos'=>$request->id_detalle__prestamos,
+            'fecha_devolucion'=>$request->fecha_devolucion,
+            'observaciones'=>$request->observaciones]);
+        return redirect()->route("devoluciones.index");
         //
     }
 
@@ -78,8 +92,11 @@ class DevolucionController extends Controller
      * @param  \App\Models\Devolucion  $devolucion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Devolucion $devolucion)
+    public function destroy(Devolucion $devolucione)
     {
+        $devolucione->delete();
+
+        return redirect()->route("devoluciones.index");
         //
     }
 }
