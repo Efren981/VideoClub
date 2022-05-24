@@ -31,7 +31,7 @@
                                   @foreach($datos as $socios)
                                   <tr scope="row">
                                       <th scope="col">{{$loop->index+1}}</th>
-                                      <td scope="col">{{$socios->matricula}}</td>
+                                      <td scope="col">{{$prestamos->fecha}}</td>
                                       <td scope="col">{{$socios->nombre}}</td>
                                       <td scope="col">{{$socios->telefono}}</td>
                                       <td scope="col">{{$socios->direccion}}</td>

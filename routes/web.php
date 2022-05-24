@@ -30,6 +30,8 @@ Route::resource('peliculas',\App\Http\Controllers\PeliculaController::class);
 
 Route::resource("devoluciones",\App\Http\Controllers\DevolucionController::class);
 
+Route::resource('prestamos',\App\Http\Controllers\PrestamoController::class);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

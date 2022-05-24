@@ -54,10 +54,6 @@
                         @else
 
                             <li class="nav-item">
-                                <a href="{{url("devoluciones")}}" class="nav-link @yield("devoluciones_active")" data-toggle="tooltip" title="Ir a la seccion de personas">Devoluciones</a>
-                            </li>
-
-                            <li class="nav-item">
                               <a href="{{url("registro_personas")}}" class="nav-link @yield("personas_active")" data-toggle="tooltip" title="Ir a la seccion de personas">Personas</a>
                             </li>
 
@@ -81,6 +77,10 @@
                               <a href="{{url("cintas")}}" class="nav-link @yield("cintas_active")" data-toggle="tooltip" title="Ir a la seccion de cintas">Cintas</a>
                             </li>
 
+                            <li class="nav-item">
+                                <a href="{{url("prestamos")}}" class="nav-link @yield("prestams_active")" data-toggle="tooltip" title="Ir a la seccion de cintas">Prestamos</a>
+                            </li>
+                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
