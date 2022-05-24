@@ -36,6 +36,13 @@ class PersonaController extends Controller
      */
     public function store(Request $request)
     {
+      $request->validate([
+        "nombre_p"=>"required|max:5|min:1|unique:personas",
+        "ap_p"=>"required|min:3|max:50|unique:personas",
+        "am_p"=>"required|min:10|max:13|unique:personas",
+        "tipo"=>"required|unique:personas",
+      ],[],["name"=>"nombre","content"=>"contenido"]);
+
       Persona:: create([
         "nombre_p" =>$request->nombre_p,
         "ap_p" =>$request->ap_p,
@@ -76,6 +83,12 @@ class PersonaController extends Controller
      */
     public function update(Request $request, Persona $registro_persona)
     {
+      "nombre_p"=>"required|max:5|min:1|unique:personas",
+      "ap_p"=>"required|min:3|max:50|unique:personas",
+      "am_p"=>"required|min:10|max:13|unique:personas",
+      "tipo"=>"required|unique:personas",
+    ],[],["name"=>"nombre","content"=>"contenido"]);
+
       $registro_persona->update(["nombre_p"=>$request->nombre_p,
       "ap_p"=>$request->ap_p,
       "am_p"=>$request->am_p,

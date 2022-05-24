@@ -36,7 +36,13 @@ class SocioController extends Controller
      */
     public function store(Request $request)
     {
-      //dd($request);
+      $request->validate([
+        "matricula"=>"required|max:5|min:1|unique:socios",
+        "nombre"=>"required|min:3|max:50|unique:socios",
+        "telefono"=>"required|min:10|max:13|unique:socios",
+        "direccion"=>"required|unique:socios",
+      ],[],["name"=>"nombre","content"=>"contenido"]);
+
       Socio:: create([
         "matricula" =>$request->matricula,
         "nombre" =>$request->nombre,
@@ -77,6 +83,13 @@ class SocioController extends Controller
      */
     public function update(Request $request, Socio $socio)
     {
+      $request->validate([
+        "matricula"=>"required|max:5|min:1|unique:socios",
+        "nombre"=>"required|min:3|max:50|unique:socios",
+        "telefono"=>"required|min:10|max:13|unique:socios",
+        "direccion"=>"required|unique:socios",
+      ],[],["name"=>"nombre","content"=>"contenido"]);
+
       $socio->update(["matricula"=>$request->matricula,
       "nombre"=>$request->nombre,
       "telefono"=>$request->telefono,

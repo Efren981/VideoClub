@@ -14,20 +14,88 @@
         <div class="row mx-5 d-flex justify-content-center">
           <div class="col-10">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="newname" placeholder=".." name="matricula" value="<?php echo e($socio->matricula); ?>">
+              <input type="text" class="form-control <?php $__errorArgs = ['matricula'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="newname" placeholder=".." name="matricula" value="<?php echo e($socio->matricula); ?>">
               <label for="newname">Nueva matricula</label>
+              <?php $__errorArgs = ['matricula'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                <div class="invalid-feedback"><?php echo e($message); ?></div>
+              <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="newcontent" placeholder=".." name="nombre" value="<?php echo e($socio->nombre); ?>">
+              <input type="text" class="form-control <?php $__errorArgs = ['nombre'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="newcontent" placeholder=".." name="nombre" value="<?php echo e($socio->nombre); ?>">
               <label for="newcontent">Nuevo nombre</label>
+              <?php $__errorArgs = ['nombre'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                <div class="invalid-feedback"><?php echo e($message); ?></div>
+              <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="newtel" placeholder=".." name="telefono" value="<?php echo e($socio->telefono); ?>">
+              <input type="text" class="form-control <?php $__errorArgs = ['telefono'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="newtel" placeholder=".." name="telefono" value="<?php echo e($socio->telefono); ?>">
               <label for="newtel">Nuevo telefono</label>
+              <?php $__errorArgs = ['telefono'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                <div class="invalid-feedback"><?php echo e($message); ?></div>
+              <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
             </div>
             <div class="form-floating mb-3">
-              <textarea class="form-control" id="newdir" placeholder=".." name="direccion" value="<?php echo e($socio->direccion); ?>"></textarea>
+              <textarea class="form-control <?php $__errorArgs = ['direccion'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" id="newdir" placeholder=".." name="direccion" value="<?php echo e($socio->direccion); ?>"></textarea>
               <label for="newdir">Nueva direccion</label>
+              <?php $__errorArgs = ['direccion'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                <div class="invalid-feedback"><?php echo e($message); ?></div>
+              <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
             </div>
           </div>
           </div>

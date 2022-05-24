@@ -30,9 +30,9 @@
                    <div class="form-floating mb-3">
                      <select class="form-control" id="tipo" name="tipo">
                        <option value="">Selecciona un valor</option>
-                       <option value="1">Socio</option>
-                       <option value="2">Director</option>
-                       <option value="3">Actor</option>
+                       <option value="Socio">Socio</option>
+                       <option value="Director">Director</option>
+                       <option value="Actor">Actor</option>
                       </select>
                      <label for="tipo">Ocupacion</label>
                    </div>
