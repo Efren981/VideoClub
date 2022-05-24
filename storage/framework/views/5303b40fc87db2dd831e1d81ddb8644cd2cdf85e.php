@@ -55,6 +55,10 @@
                         <?php else: ?>
 
                             <li class="nav-item">
+                                <a href="<?php echo e(url("devoluciones")); ?>" class="nav-link <?php echo $__env->yieldContent("devoluciones_active"); ?>" data-toggle="tooltip" title="Ir a la seccion de personas">Devoluciones</a>
+                            </li>
+
+                            <li class="nav-item">
                               <a href="<?php echo e(url("registro_personas")); ?>" class="nav-link <?php echo $__env->yieldContent("personas_active"); ?>" data-toggle="tooltip" title="Ir a la seccion de personas">Personas</a>
                             </li>
 
@@ -77,7 +81,11 @@
                             <li class="nav-item">
                               <a href="<?php echo e(url("cintas")); ?>" class="nav-link <?php echo $__env->yieldContent("cintas_active"); ?>" data-toggle="tooltip" title="Ir a la seccion de cintas">Cintas</a>
                             </li>
-                            
+
+                            <li class="nav-item">
+                              <a href="<?php echo e(url("devoluciones")); ?>" class="nav-link <?php echo $__env->yieldContent("devoluciones_active"); ?>" data-toggle="tooltip" title="Ir a la seccion de cintas">Devoluciones</a>
+                            </li>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <?php echo e(Auth::user()->name); ?>
