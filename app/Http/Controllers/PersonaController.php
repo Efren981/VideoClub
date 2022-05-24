@@ -83,6 +83,7 @@ class PersonaController extends Controller
      */
     public function update(Request $request, Persona $registro_persona)
     {
+      $request->validate([
       "nombre_p"=>"required|max:5|min:1|unique:personas",
       "ap_p"=>"required|min:3|max:50|unique:personas",
       "am_p"=>"required|min:10|max:13|unique:personas",
