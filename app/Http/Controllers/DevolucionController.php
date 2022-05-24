@@ -77,9 +77,9 @@ class DevolucionController extends Controller
      * @param  \App\Models\Devolucion  $devolucion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Devolucion $devolucion)
+    public function update(Request $request, Devolucion $devolucione)
     {
-        $devolucion->update(['id_detalle__prestamos'=>$request->id_detalle__prestamos,
+        $devolucione->update(['id_detalle__prestamos'=>$request->id_detalle__prestamos,
             'fecha_devolucion'=>$request->fecha_devolucion,
             'observaciones'=>$request->observaciones]);
         return redirect()->route("devoluciones.index");
