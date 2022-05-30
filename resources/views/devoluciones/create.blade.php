@@ -16,7 +16,7 @@
                             <div class="row mt-0">
                                 <form method="POST" action="{{url("devoluciones")}}">
                                     <div class="row">
-                                        <h5 class="text-center">Nueva devolucion</h5>
+                                        <h5 class="text-center">Nueva Devolución</h5>
                                         <div class="mt-3">
                                             <div class="card shadow-sm al">
                                                 <div class="card-body">
@@ -25,7 +25,7 @@
                                                         <div class="form-floating mb-3 ">
                                                             <input type="text" class="form-control" id="id_detalle__prestamos" placeholder=""
                                                                    name="id_detalle__prestamos">
-                                                            <label for="id_detalle__prestamos">Nunero de prestamo</label>
+                                                            <label for="id_detalle__prestamos">Numero de Prestamo</label>
                                                         </div>
 
                                                         <div class="form-floating mb-3">
