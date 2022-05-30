@@ -16,20 +16,32 @@
         <div class="row mx-5 d-flex justify-content-center">
           <div class="col-10">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="newname" placeholder=".." name="matricula" value="{{$socio->matricula}}">
+              <input type="text" class="form-control @error ('matricula') is-invalid @enderror" id="newname" placeholder=".." name="matricula" value="{{$socio->matricula}}">
               <label for="newname">Nueva matricula</label>
+              @error('matricula')
+                <div class="invalid-feedback">{{$message}}</div>
+              @enderror
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="newcontent" placeholder=".." name="nombre" value="{{$socio->nombre}}">
+              <input type="text" class="form-control @error ('nombre') is-invalid @enderror" id="newcontent" placeholder=".." name="nombre" value="{{$socio->nombre}}">
               <label for="newcontent">Nuevo nombre</label>
+              @error('nombre')
+                <div class="invalid-feedback">{{$message}}</div>
+              @enderror
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="newtel" placeholder=".." name="telefono" value="{{$socio->telefono}}">
+              <input type="text" class="form-control @error ('telefono') is-invalid @enderror" id="newtel" placeholder=".." name="telefono" value="{{$socio->telefono}}">
               <label for="newtel">Nuevo telefono</label>
+              @error('telefono')
+                <div class="invalid-feedback">{{$message}}</div>
+              @enderror
             </div>
             <div class="form-floating mb-3">
-              <textarea class="form-control" id="newdir" placeholder=".." name="direccion" value="{{$socio->direccion}}"></textarea>
+              <textarea class="form-control @error ('direccion') is-invalid @enderror" id="newdir" placeholder=".." name="direccion" value="{{$socio->direccion}}"></textarea>
               <label for="newdir">Nueva direccion</label>
+              @error('direccion')
+                <div class="invalid-feedback">{{$message}}</div>
+              @enderror
             </div>
           </div>
           </div>
