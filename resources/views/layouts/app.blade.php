@@ -54,6 +54,9 @@
                         @else
 
                             <li class="nav-item">
+                                <a href="{{url("devoluciones")}}" class="nav-link @yield("devoluciones_active")" data-toggle="tooltip" title="Ir a la seccion de devoluciones">Devoluciones</a>
+                            </li>
+                            <li class="nav-item">
                               <a href="{{url("registro_personas")}}" class="nav-link @yield("personas_active")" data-toggle="tooltip" title="Ir a la seccion de personas">Personas</a>
                             </li>
 
