@@ -38,6 +38,13 @@ class DevolucionController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(["id_detalle__prestamos"=>"numeric|required",
+            "fecha_devolucion"=>"required",
+            "observaciones"=>"required"],
+            [],
+            ['id_detalle__prestamos'=>'Numero de prestamo',
+                'fecha_devolucion'=>'fecha de devolucion',
+                'observaciones'=>'observaciones']);
         Devolucion:: create(["id_detalle__prestamos"=>$request->id_detalle__prestamos,
             "fecha_devolucion"=>$request->fecha_devolucion,
             "observaciones"=>$request->observaciones]);
@@ -79,6 +86,13 @@ class DevolucionController extends Controller
      */
     public function update(Request $request, Devolucion $devolucione)
     {
+        $request->validate(["id_detalle__prestamos"=>"numeric|required",
+            "fecha_devolucion"=>"required",
+            "observaciones"=>"required"],
+            [],
+            ['id_detalle__prestamos'=>'Numero de prestamo',
+                'fecha_devolucion'=>'fecha de devolucion',
+                'observaciones'=>'observaciones']);
         $devolucione->update(['id_detalle__prestamos'=>$request->id_detalle__prestamos,
             'fecha_devolucion'=>$request->fecha_devolucion,
             'observaciones'=>$request->observaciones]);
