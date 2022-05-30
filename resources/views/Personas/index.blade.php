@@ -39,7 +39,7 @@
                                       <td scope="col"><form action="{{route("registro_personas.destroy",$personas->id)}}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-danger btn-sm" type="submit" data-toggle="tooltip" title="Eliminar esta difusion"><span class="icon-bin">Eliminar</span></button>
+                                        <button class="btn btn-danger btn-sm" type="submit" data-toggle="tooltip" title="Eliminar este registro"><span class="icon-bin">Eliminar</span></button>
                                       </form></td>
                                   </tr>
                                   @endforeach

@@ -16,25 +16,37 @@
         <div class="row mx-5 d-flex justify-content-center">
           <div class="col-10">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="newname" placeholder=".." name="nombre_p" value="{{$registro_persona->nombre_p}}">
+              <input type="text" class="form-control @error ('nombre_p') is-invalid @enderror" id="newname" placeholder=".." name="nombre_p" value="{{$registro_persona->nombre_p}}">
               <label for="newname">Nuevo nombre</label>
+              @error('nombre_p')
+                <div class="invalid-feedback">{{$message}}</div>
+              @enderror
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="newapp" placeholder=".." name="ap_p" value="{{$registro_persona->ap_p}}">
+              <input type="text" class="form-control @error ('ap_p') is-invalid @enderror" id="newapp" placeholder=".." name="ap_p" value="{{$registro_persona->ap_p}}">
               <label for="newapp">Nuevo apellido paterno</label>
+              @error('ap_p')
+                <div class="invalid-feedback">{{$message}}</div>
+              @enderror
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="newamp" placeholder=".." name=am_p value="{{$registro_persona->am_p}}">
+              <input type="text" class="form-control @error ('am_p') is-invalid @enderror" id="newamp" placeholder=".." name=am_p value="{{$registro_persona->am_p}}">
               <label for="newamp">Nuevo apellido materno</label>
+              @error('am_p')
+                <div class="invalid-feedback">{{$message}}</div>
+              @enderror
             </div>
             <div class="form-floating mb-3">
-              <select class="form-control" id="tipo" name="tipo">
+              <select class="form-control @error ('tipo') is-invalid @enderror" id="tipo" name="tipo">
                   <option value="">Selecciona tipo</option>
-                  <option value="1">Socio</option>
-                  <option value="2">Director</option>
-                  <option value="3">Actor</option>
+                  <option value="Socio">Socio</option>
+                  <option value="Director">Director</option>
+                  <option value="Actor">Actor</option>
                </select>
                 <label for="tipo">Ocupacion</label>
+                @error('tipo')
+                  <div class="invalid-feedback">{{$message}}</div>
+                @enderror
             </div>
           </div>
           </div>
