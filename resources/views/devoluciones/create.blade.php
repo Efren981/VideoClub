@@ -23,21 +23,28 @@
                                                     <form method="POST" action="{{url("devoluciones")}}">
                                                         @csrf
                                                         <div class="form-floating mb-3 ">
-                                                            <input type="text" class="form-control" id="id_detalle__prestamos" placeholder=""
+                                                            <input type="text" class="form-control @error('id_detalle__prestamos') is-invalid @enderror"
+                                                                   id="id_detalle__prestamos" placeholder=""
                                                                    name="id_detalle__prestamos">
-                                                            <label for="id_detalle__prestamos">Numero de Prestamo</label>
+                                                            <label for="id_detalle__prestamos">Nunero de prestamo</label>
+                                                            @error('id_detalle__prestamos')
+                                                            <div class="invalid-feedback">{{$message}}</div>@enderror
                                                         </div>
 
                                                         <div class="form-floating mb-3">
-                                                            <input type="date" class="form-control" id="fecha_devolucion" placeholder=""
-                                                                   name="fecha_devolucion">
+                                                            <input type="date" class="form-control @error('fecha_devolucion') is-invalid @enderror"
+                                                                   id="fecha_devolucion" placeholder="" name="fecha_devolucion">
                                                             <label for="fecha_devolucion">Fecha de Devolucion</label>
+                                                            @error('fecha_devolucion')
+                                                            <div class="invalid-feedback">{{$message}}</div>@enderror
                                                         </div>
 
                                                         <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" id="observaciones" placeholder=""
+                                                            <input type="text" class="form-control @error('observaciones') is-invalid @enderror" id="observaciones" placeholder=""
                                                                    name="observaciones">
                                                             <label for="observaciones">Observaciones</label>
+                                                            @error('observaciones')
+                                                            <div class="invalid-feedback">{{$message}}</div>@enderror
                                                         </div>
 
                                                         <div class="row my-3 d-flex justify-content-center">
