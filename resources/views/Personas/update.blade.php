@@ -16,25 +16,32 @@
         <div class="row mx-5 d-flex justify-content-center">
           <div class="col-10">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="newname" placeholder=".." name="nombre_p" value="{{$registro_persona->nombre_p}}">
+              <input type="text" class="form-control @error ('nombre') is-invalid @enderror" id="newname" placeholder=".." name="nombre" value="{{$registro_persona->nombre}}">
               <label for="newname">Nuevo nombre</label>
+              @error('nombre')
+                <div class="invalid-feedback">{{$message}}</div>
+              @enderror
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="newapp" placeholder=".." name="ap_p" value="{{$registro_persona->ap_p}}">
+              <input type="text" class="form-control @error ('apellidoPaterno') is-invalid @enderror" id="newapp" placeholder=".." name="apellidoPaterno" value="{{$registro_persona->apellidoPaterno}}">
               <label for="newapp">Nuevo apellido paterno</label>
+              @error('apellidoPaterno')
+                <div class="invalid-feedback">{{$message}}</div>
+              @enderror
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="newamp" placeholder=".." name=am_p value="{{$registro_persona->am_p}}">
+              <input type="text" class="form-control @error ('apellidoMaterno') is-invalid @enderror" id="newamp" placeholder=".." name="apellidoMaterno" value="{{$registro_persona->apellidoMaterno}}">
               <label for="newamp">Nuevo apellido materno</label>
+              @error('apellidoMaterno')
+                <div class="invalid-feedback">{{$message}}</div>
+              @enderror
             </div>
             <div class="form-floating mb-3">
-              <select class="form-control" id="tipo" name="tipo">
-                  <option value="">Selecciona tipo</option>
-                  <option value="1">Socio</option>
-                  <option value="2">Director</option>
-                  <option value="3">Actor</option>
-               </select>
-                <label for="tipo">Ocupacion</label>
+              <input type="text" class="form-control @error ('id_rango') is-invalid @enderror" id="newamp" placeholder=".." name="id_rango" value="{{$registro_persona->id_rango}}">
+              <label for="newamp">Nuevo apellido materno</label>
+              @error('id_rango')
+                <div class="invalid-feedback">{{$message}}</div>
+              @enderror
             </div>
           </div>
           </div>

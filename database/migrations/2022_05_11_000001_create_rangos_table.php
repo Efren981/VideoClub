@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetalleActorsTable extends Migration
+class CreateRangosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateDetalleActorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('detalle_actors', function (Blueprint $table) {
+        Schema::create('rangos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_actor')->constrained('actors');
-            $table->foreignId('id_pelicula')->constrained('peliculas');
+            $table->string('descripcion_rango',20);
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateDetalleActorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detalle_actors');
+        Schema::dropIfExists('rangos');
     }
 }

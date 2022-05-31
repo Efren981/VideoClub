@@ -14,7 +14,9 @@ class PrestamoController extends Controller
      */
     public function index()
     {
-        //
+
+       $datos =Prestamo::all();
+        return view("prestamos.index",compact("datos"));
     }
 
     /**
@@ -24,7 +26,8 @@ class PrestamoController extends Controller
      */
     public function create()
     {
-        //
+        $tipo_prestamo=Prestamo::all();
+        return view('prestamos.create', compact("tipo_prestamo"));
     }
 
     /**
@@ -35,7 +38,18 @@ class PrestamoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(["date"=>"required",
+            "socio"=>"required",
+            "pelicula"=>"required",
+            "cinta"=>"required"
+            ]);
+        Prestamo::create([
+            'fecha'=>$request->fecha,
+            'socio'=>$request->socio,
+            'pelicula'=>$request->pelicula,
+            'cinta'=>$request->cinta
+        ]);
+        return redirect()->route('prestamos.index');
     }
 
     /**
@@ -46,7 +60,7 @@ class PrestamoController extends Controller
      */
     public function show(Prestamo $prestamo)
     {
-        //
+        return view('prestamo.edit', compact('prestamos'));
     }
 
     /**
@@ -69,7 +83,9 @@ class PrestamoController extends Controller
      */
     public function update(Request $request, Prestamo $prestamo)
     {
-        //
+
+        $prestamo->update(['fecha'=>$request->fecha]);
+        return redirect()->route("prestamos.index");
     }
 
     /**
@@ -80,6 +96,8 @@ class PrestamoController extends Controller
      */
     public function destroy(Prestamo $prestamo)
     {
-        //
+        $prestamo->delete();
+        return redirect()->route('prestamos.index');
+
     }
 }

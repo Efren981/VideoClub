@@ -15,7 +15,7 @@
       <div class="col-6">
         <div class="card">
           <a href="{{url("socios/create")}}" class="btn btn-dark btn-sm mb-4 text-white"data-toggle="tooltip" title="Cargar nuevo socio"><span class="icon-pen"> Nuevo</span></a>
-          <table class="table card" style="background: #e1e1e8">
+          <table class="table" style="background: #e1e1e8">
                                   <thead>
                                   <tr>
                                       <th scope="col">#</th>
@@ -31,7 +31,7 @@
                                   @foreach($datos as $socios)
                                   <tr scope="row">
                                       <th scope="col">{{$loop->index+1}}</th>
-                                      <td scope="col">{{$socios->matricula}}</td>
+                                      <td scope="col">{{$socios->fecha}}</td>
                                       <td scope="col">{{$socios->nombre}}</td>
                                       <td scope="col">{{$socios->telefono}}</td>
                                       <td scope="col">{{$socios->direccion}}</td>

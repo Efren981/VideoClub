@@ -16,25 +16,32 @@
                  <form method="POST" action="{{url("registro_personas")}}">
                    @csrf
                    <div class="form-floating mb-3">
-                     <input type="text" class="form-control" id="nombre" placeholder=".." name="nombre_p">
+                     <input type="text" class="form-control @error ('nombre') is-invalid @enderror" id="nombre" placeholder=".." name="nombre" value="{{old('nombre_p')}}">
                      <label for="nombre">Nombre</label>
+                     @error('nombre')
+                       <div class="invalid-feedback">{{$message}}</div>
+                     @enderror
                    </div>
                    <div class="form-floating mb-3">
-                     <input type="text" class="form-control" id="ap1" placeholder=".." name="ap_p">
+                     <input type="text" class="form-control @error ('apellidoPaterno') is-invalid @enderror" id="ap1" placeholder=".." name="apellidoPaterno" value="{{old('ap_p')}}">
                      <label for="ap1">Apellido Paterno</label>
+                     @error('apellidoPaterno')
+                       <div class="invalid-feedback">{{$message}}</div>
+                     @enderror
                    </div>
                    <div class="form-floating mb-3">
-                     <input type="text" class="form-control" id="ap2"placeholder=".." name="am_p">
+                     <input type="text" class="form-control @error ('apellidoMaterno') is-invalid @enderror" id="ap2"placeholder=".." name="apellidoMaterno" value="{{old('am_p')}}">
                      <label for="ap2">Apellido Materno</label>
+                     @error('apellidoMaterno')
+                       <div class="invalid-feedback">{{$message}}</div>
+                     @enderror
                    </div>
                    <div class="form-floating mb-3">
-                     <select class="form-control" id="tipo" name="tipo">
-                       <option value="">Selecciona un valor</option>
-                       <option value="1">Socio</option>
-                       <option value="2">Director</option>
-                       <option value="3">Actor</option>
-                      </select>
-                     <label for="tipo">Ocupacion</label>
+                     <input type="text" class="form-control @error ('id_rango') is-invalid @enderror" id="ap2"placeholder=".." name="id_rango" value="{{old('id_rango')}}">
+                     <label for="ap2">Rango</label>
+                     @error('id_rango')
+                       <div class="invalid-feedback">{{$message}}</div>
+                     @enderror
                    </div>
                    <div class="row my-5 d-flex justify-content-center">
                        <div class="col-3"></div>
@@ -43,7 +50,7 @@
 
                        </div>
                        <div class="col-3">
-                         <button class="btn btn-primary" type="submit"><span class="icon-checkmark" data-toggle="tooltip" title="Agregar nueva publicacion">Guardar</span></button>
+                         <button class="btn btn-primary" type="submit"><span class="icon-checkmark" data-toggle="tooltip" title="Agregar">Guardar</span></button>
                        </div>
                        <div class="col-3"></div>
                    </div>
