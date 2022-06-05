@@ -20,28 +20,28 @@
            <form method="POST" action="{{url("socios")}}">
              @csrf
              <div class="form-floating mb-3">
-               <input type="text" class="form-control @error ('matricula') is-invalid @enderror" id="mat" placeholder=".." name="matricula">
+               <input type="text" class="form-control @error ('matricula') is-invalid @enderror" id="mat" placeholder="" name="matricula" value="{{old('matricula')}}">
                <label for="mat">Matricula</label>
                @error('matricula')
                  <div class="invalid-feedback">{{$message}}</div>
                @enderror
              </div>
              <div class="form-floating mb-3">
-               <input type="text" class="form-control @error ('nombre') is-invalid @enderror" id="nom" placeholder=".." name="nombre">
+               <input type="text" class="form-control @error ('nombre') is-invalid @enderror" id="nom" placeholder=".." name="nombre" value="{{old('nombre')}}">
                <label for="nom">Nombre completo</label>
                @error('nombre')
                  <div class="invalid-feedback">{{$message}}</div>
                @enderror
              </div>
              <div class="form-floating mb-3">
-               <input type="text" class="form-control @error ('telefono') is-invalid @enderror" id="tel"placeholder=".." name="telefono">
+               <input type="text" class="form-control @error ('telefono') is-invalid @enderror" id="tel"placeholder=".." name="telefono" value="{{old('telefono')}}">
                <label for="tel">Telefono</label>
                @error('telefono')
                  <div class="invalid-feedback">{{$message}}</div>
                @enderror
              </div>
              <div class="form-floating mb-3">
-               <textarea class="form-control @error ('direccion') is-invalid @enderror" id="dir" placeholder=".." name="direccion" value="{{old('direccion')}}" rows="5"></textarea>
+               <textarea class="form-control @error ('direccion') is-invalid @enderror" id="dir" placeholder=".." name="direccion"  rows="5"></textarea>
                <label for="dir">Direccion</label>
                @error('direccion')
                  <div class="invalid-feedback">{{$message}}</div>
