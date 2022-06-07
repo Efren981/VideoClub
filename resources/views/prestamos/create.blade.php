@@ -45,9 +45,11 @@
                                         @enderror
 
                                         <div class="row my-5 d-flex justify-content-center">
-                                            <div class="col-3"></div>
-                                            <div class="col-3">
+                                            <div class="col-2">
                                                 <a href="{{url("prestamos")}}" class="btn btn-danger mb-4 text-white"><span class="icon-arrow-thin-left" data-toggle="tooltip" title="Regresar al menu principal">Cancelar</span></a>
+                                            
+                                            </div>
+                                            <div class="col-3">
 
                                             </div>
                                             <div class="col-3">
