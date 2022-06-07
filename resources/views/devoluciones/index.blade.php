@@ -8,11 +8,16 @@
   <div class="col">
     <div class="row">
       <div class="col">
-        <h1 class="text-center mb-5">Devoluciones</h1>
+        <h1 class="alert alert-success text-center mb-5">Devoluciones</h1>
       </div>
     </div>
-    <div class="row">
-      <div class="col-8 offset-2">
+    <div class="row justify-content-center ">
+        <div class="col-3">
+            <figure class="figure">
+                <img src="{{asset("/images/videoclub.png")}}" alt="login" class="figure-img img-fluid" style= "padding: 1em;width:400%">
+            </figure>
+        </div>
+      <div class="col-7 offset">
         <div class="card shadow-sm al a">
           <div class="card-body">
             <div class="row mt-0">
@@ -25,15 +30,15 @@
 
                   <div class="mt-3">
                     <div class="card shadow-sm al">
-                      <div class="card-body">
-                        <table class="table">
+                      <div class="justify-content-center card-body">
+                        <table class=" table text-center">
                           <thead class="thead-light">
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">No. prestamo</th>
-                            <th scope="col">Fecha de devolucion</th>
+                            <th scope="col">No. préstamo</th>
+                            <th scope="col">Fecha de Devolución</th>
                             <th scope="col">Observaciones</th>
-                            <th scope="col">Aciones</th>
+                            <th scope="col">Acciones</th>
                           </tr>
                           </thead>
                           <tbody> @foreach($datos as $devolucion)
