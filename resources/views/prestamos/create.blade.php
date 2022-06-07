@@ -8,7 +8,11 @@
         <div class="col-6 ">
             <div class="row">
                 <div class="card">
+<<<<<<< HEAD
                     <h1 class="card-title mt-4 mb-4 alert-primary text-center">Generar Prestamo</h1>
+=======
+                    <h1 class="card-title mt-4 mb-4 alert-primary text-center">Generar Prestamos</h1>
+>>>>>>> origin
                     <div class="row d-flex justify-content-center">
                         <div class="col-6">
                             <div class="row d-flex justify-content-center">
@@ -17,7 +21,11 @@
                                         @csrf
                                         <div class="form-floating mb-3">
                                             <input type="date" class="form-control @error ('date') is-invalid @enderror" id="nombre" placeholder=".." name="date">
+<<<<<<< HEAD
                                             <label for="nombre">Fecha Prestamo</label>
+=======
+                                            <label for="nombre">Fecha del Prestamo</label>
+>>>>>>> origin
                                         </div>
                                         @error('date')
                                         <div class="invalid-feedback">{{$message}}</div>
@@ -31,23 +39,39 @@
                                         @enderror
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control @error ('pelicula') is-invalid @enderror" id="ap2"placeholder=".." name="pelicula">
+<<<<<<< HEAD
                                             <label for="ap2">Pelicula</label>
+=======
+                                            <label for="ap2">Peliculas</label>
+>>>>>>> origin
                                         </div>
                                         @error('pelicula')
                                         <div class="invalid-feedback">{{$message}}</div>
                                         @enderror
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control @error ('cinta') is-invalid @enderror" id="ap2"placeholder=".." name="cinta">
+<<<<<<< HEAD
                                             <label for="ap2">Cinta</label>
+=======
+                                            <label for="ap2">Cintas</label>
+>>>>>>> origin
                                         </div>
                                         @error('cinta')
                                         <div class="invalid-feedback">{{$message}}</div>
                                         @enderror
 
                                         <div class="row my-5 d-flex justify-content-center">
+<<<<<<< HEAD
                                             <div class="col-3"></div>
                                             <div class="col-3">
                                                 <a href="{{url("prestamos")}}" class="btn btn-danger mb-4 text-white"><span class="icon-arrow-thin-left" data-toggle="tooltip" title="Regresar al menu principal">Cancelar</span></a>
+=======
+                                            <div class="col-2">
+                                                <a href="{{url("prestamos")}}" class="btn btn-danger mb-4 text-white"><span class="icon-arrow-thin-left" data-toggle="tooltip" title="Regresar al menu principal">Cancelar</span></a>
+                                            
+                                            </div>
+                                            <div class="col-3">
+>>>>>>> origin
 
                                             </div>
                                             <div class="col-3">
@@ -65,3 +89,7 @@
         </div>
     </div>
 @endsection
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin

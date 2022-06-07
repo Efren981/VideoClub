@@ -15,10 +15,10 @@ class CreatePersonasTable extends Migration
     {
         Schema::create('personas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_p',30);
-            $table->string('ap_p',30);
-            $table->string('am_p',30);
-            $table->string('tipo',30);
+            $table->string('nombre',30);
+            $table->string('apellidoPaterno',30);
+            $table->string('apellidoMaterno',30);
+            $table->foreignId('id_rango')->constrained('rangos');
             $table->timestamps();
             //$table->foreignId('user_id')->constrained('users');
         });
