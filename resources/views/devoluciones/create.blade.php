@@ -47,12 +47,12 @@
                                                             <div class="invalid-feedback">{{$message}}</div>@enderror
                                                         </div>
 
-                                                        <div class="row my-3 d-flex justify-content-center">
-                                                            <div class="col-3">
-                                                                <a href="{{url("devoluciones")}}" class="btn btn-danger mb-4 text-white"
+                                                        <div class="row my-3 justify-content-center">
+                                                            <div class="col-4">
+                                                                <a href="{{url("devoluciones")}}" class="btn btn-danger text-white"
                                                                    data-toggle="tooltip" title="Regresar al menu principal">Cancelar</a>
                                                             </div>
-                                                            <div class="col-3">
+                                                            <div class="col-4">
                                                                 <button class="btn btn-primary" type="submit"
                                                                         data-toggle="tooltip" title="Agregar nueva devolucion">Guardar</button>
                                                             </div>

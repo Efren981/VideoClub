@@ -13,4 +13,5 @@ class Detalle_Prestamo extends Model
         "id_prestamo",
         "id_cinta"
     ];
+    // php artisan make:model DetallePrestamo -mcr
 }

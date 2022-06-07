@@ -14,8 +14,8 @@ class CreateDevolucionsTable extends Migration
     public function up()
     {
         Schema::create('devolucions', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('id_detalle__prestamos')->constrained('detalle__prestamos');
+            $table->bigIncrements("id_devolucion");
+            $table->foreignId('id_detalle_prestamos')->constrained('detalle_prestamos');
             $table->date('fecha_devolucion');
             $table->text('observaciones');
             $table->timestamps();

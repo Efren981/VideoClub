@@ -13,9 +13,14 @@
     </div>
     <div class="row d-flex justify-content-center">
       <div class="col-6">
-        <div class="card">
-          <a href="{{url("registro_personas/create")}}" class="btn btn-dark btn-sm mb-4 text-white"data-toggle="tooltip" title="Cargar nueva persona"><span class="icon-pen"> Nuevo</span></a>
-          <table class="table card" style="background: #e1e1e8">
+        <div class="card p-2">
+          <div class="row">
+            <div class="col-1">
+          <a href="{{url("registro_personas/create")}}" class="btn btn-success mb-4 text-white"data-toggle="tooltip" title="Cargar nueva persona"><span class="icon-pen"> Nuevo</span></a>
+              
+            </div>
+          </div>
+          <table class="table" style="background: #e1e1e8">
                                   <thead>
                                   <tr>
                                       <th scope="col">#</th>
@@ -29,14 +34,14 @@
                                   </thead>
                                   <tbody>
                                   @foreach($datos as $personas)
-                                  <tr scope="row">
-                                      <th scope="col">{{$loop->index+1}}</th>
-                                      <td scope="col">{{$personas->nombre_p}}</td>
-                                      <td scope="col">{{$personas->ap_p}}</td>
-                                      <td scope="col">{{$personas->am_p}}</td>
-                                      <td scope="col">{{$personas->tipo}}</td>
-                                      <td scope="col"><a href="{{route("registro_personas.edit",$personas->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar personas"><span class="icon-compose">Editar</span></a></td>
-                                      <td scope="col"><form action="{{route("registro_personas.destroy",$personas->id)}}" method="post">
+                                  <tr >
+                                      <th scope="row">{{$loop->index+1}}</th>
+                                      <td >{{$personas->nombre_p}}</td>
+                                      <td >{{$personas->ap_p}}</td>
+                                      <td >{{$personas->am_p}}</td>
+                                      <td >{{$personas->tipo}}</td>
+                                      <td ><a href="{{route("registro_personas.edit",$personas->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar personas"><span class="icon-compose">Editar</span></a></td>
+                                      <td ><form action="{{route("registro_personas.destroy",$personas->id)}}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger btn-sm" type="submit" data-toggle="tooltip" title="Eliminar este registro"><span class="icon-bin">Eliminar</span></button>
