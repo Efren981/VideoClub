@@ -27,7 +27,7 @@
                                             <label for="ap1">Socio</label>
                                         </div>
                                         @error('socio')
-                                        <div class="invalid-feedback">{{$message}}</div>
+                                        <div class ="invalid-feedback">{{$message}}</div>
                                         @enderror
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control @error ('pelicula') is-invalid @enderror" id="ap2"placeholder=".." name="pelicula">
