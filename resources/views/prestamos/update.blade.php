@@ -15,7 +15,7 @@
                     @method('PUT')
                     <div class="form-floating mb-3">
                         <input type="date" class="form-control @error ('date') is-invalid @enderror" id="nombre" placeholder=".." name="date" value="{{$prestamo->fecha}}">
-                        <label for="nombre">Fecha Prestamo</label>
+                        <label for="nombre">Fecha del Prestamo</label>
                     </div>
                     @error('date')
                     <div class="invalid-feedback">{{$message}}</div>
@@ -29,14 +29,14 @@
                     @enderror
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control @error ('pelicula') is-invalid @enderror" id="ap2"placeholder=".." name="pelicula" value="{{$prestamo->pelicula}}">
-                        <label for="ap2">Pelicula</label>
+                        <label for="ap2">Peliculas</label>
                     </div>
                     @error('pelicula')
                     <div class="invalid-feedback">{{$message}}</div>
                     @enderror
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control @error ('cinta') is-invalid @enderror" id="ap2"placeholder=".." name="cinta" value="{{$prestamo->cinta}}">
-                        <label for="ap2">Cinta</label>
+                        <label for="ap2">Cintas</label>
                     </div>
                     @error('cinta')
                     <div class="invalid-feedback">{{$message}}</div>
