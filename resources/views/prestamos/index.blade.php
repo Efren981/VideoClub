@@ -14,9 +14,9 @@
             <div class="card">
                 <a
                         href="{{url("prestamos/create")}}"
-                        class="btn btn-dark btn-sm mb-4 text-white"
+                        class="btn btn-secondary btn-sm mb-4 text-white"
                         data-toggle="tooltip"
-                        title="Cargar nuevo socio">
+                        title="Cargar nuevo prestamo">
                     <span
                             class="icon-pen">
                         Generar Prestamo
