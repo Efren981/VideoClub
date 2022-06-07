@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cinta;
+use App\Models\Pelicula;
+use App\Models\Persona;
 use App\Models\Prestamo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PrestamoController extends Controller
 {
@@ -15,7 +19,8 @@ class PrestamoController extends Controller
     public function index()
     {
 
-       $datos =Prestamo::all();
+       $datos = Prestamo::all();
+       //dd($datos);
         return view("prestamos.index",compact("datos"));
     }
 
@@ -26,6 +31,10 @@ class PrestamoController extends Controller
      */
     public function create()
     {
+        $datos_socio = Persona::join("socios", "personas.id", "=", "socios.personas_id")->select("personas.nombre_p")->get();
+        $datos_pelicula = Pelicula::all("titulo");
+        //$datos_cinta = Cinta::all("codigo");
+        //dd($datos_pelicula);
         $tipo_prestamo=Prestamo::all();
         return view('prestamos.create', compact("tipo_prestamo"));
     }

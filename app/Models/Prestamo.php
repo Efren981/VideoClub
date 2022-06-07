@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Prestamo extends Model
 {
     use HasFactory;
+    protected $table="prestamos";
+    protected $primaryKey="id_prestamos";
     protected $fillable=[
         "fecha"
     ];

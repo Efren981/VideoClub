@@ -39,9 +39,7 @@
                    <tr>
                        <td>{{$loop->index+1}}</td>
                        <td>{{$prestamos->fecha}}</td>
-                       <td>{{$prestamos->socio}}</td>
-                       <td>{{$prestamos->pelicula}}</td>
-                       <td>{{$prestamos->cintas}}</td>
+
                        <td scope="col"><a href="{{route("prestamos.edit",$prestamos->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar difusion"><span class="icon-compose">Editar</span></a></td>
                        <td scope="col"><form action="{{route("prestamos.destroy",$prestamos->id)}}" method="post">
                                @csrf

@@ -15,8 +15,8 @@ class CreateSociosTable extends Migration
     {
         Schema::create('socios', function (Blueprint $table) {
             $table->id();
-            $table->string('matricula',30);
-            $table->string('nombre',100);
+            $table->unsignedBigInteger("persona_id");
+            $table->foreign("persona_id")->references('id')->on('personas');
             $table->string('telefono',15);
             $table->text('direccion');
           //  $table->foreignId('id_persona')->constrained('personas');
