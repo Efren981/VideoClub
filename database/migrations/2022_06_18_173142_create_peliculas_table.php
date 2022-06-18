@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('peliculas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('idGenero')->constrained('genero');
+            $table->string('titulo')->unique();
         });
     }
 

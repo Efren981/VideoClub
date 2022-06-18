@@ -16,6 +16,10 @@ return new class extends Migration
         Schema::create('esperas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('idSocio')->constrained('socios');
+            $table->foreignId('idPelicula')->constrained('peliculas');
+            $table->integer('prioridad');
+            $table->date();
         });
     }
 

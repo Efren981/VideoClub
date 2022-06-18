@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('socios', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('idPersona')->constrained('socios');
+            $table->text('direccion',100);
+            $table->string('telefono');
         });
     }
 
