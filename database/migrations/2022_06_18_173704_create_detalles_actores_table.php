@@ -18,7 +18,6 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId('idDirector')->constrained('directores');
             $table->foreignId('idPelicula')->constrained('peliculas');
-            $table->foreignId('idPelicula')->constrained('peliculas');
         });
     }
 
