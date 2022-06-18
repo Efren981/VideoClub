@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('personas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
         });
     }
 
