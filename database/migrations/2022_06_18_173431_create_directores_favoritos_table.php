@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('directores_favoritos', function (Blueprint $table) {
+        Schema::create('director_favoritos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('idDirector')->constrained('directores');
+            $table->foreignId('idSocio')->constrained('socios');
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('directores_favoritos');
+        Schema::dropIfExists('director_favoritos');
     }
 };

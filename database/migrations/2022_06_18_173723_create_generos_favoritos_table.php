@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('generos_favoritos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('idGenero')->constrained('generos');
+            $table->foreignId('idSocio')->constrained('socios');
         });
     }
 

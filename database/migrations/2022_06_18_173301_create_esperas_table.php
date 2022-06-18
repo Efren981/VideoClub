@@ -19,7 +19,8 @@ return new class extends Migration
             $table->foreignId('idSocio')->constrained('socios');
             $table->foreignId('idPelicula')->constrained('peliculas');
             $table->integer('prioridad');
-            $table->date();
+            $table->date('fecha');
+            $table->string('estado');
         });
     }
 

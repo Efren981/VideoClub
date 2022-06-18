@@ -16,6 +16,10 @@ return new class extends Migration
         Schema::create('detalles_prestamos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('idSocio')->constrained('socios');
+            $table->foreignId('idPrestamo')->constrained('prestamos');
+            $table->foreignId('idCinta')->constrained('cintas');
+
         });
     }
 

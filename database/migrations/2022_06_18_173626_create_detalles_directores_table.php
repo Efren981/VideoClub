@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('detalles_directores', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('idActor')->constrained('actores');
+            $table->foreignId('idPelicula')->constrained('peliculas');
         });
     }
 
