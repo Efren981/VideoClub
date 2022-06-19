@@ -36,9 +36,13 @@ class ActoresController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         Actores::create(['idPersona'=>$request->idPersona,'nombreArtistico'=>$request->nombreArtistico]);
         return redirect()->route('actores.index');
 
+=======
+        //
+>>>>>>> 4080c97fb5c8853467107a3f3e4cb169ea3b1e88
     }
 
     /**
@@ -73,9 +77,6 @@ class ActoresController extends Controller
     public function update(Request $request, Actores $actores)
     {
         //
-        $request->validate(["nombre"=>"required",
-            "apellido"=>"required"
-        ],[],["name"=>"nombre","content"=>"contenido"]);
     }
 
     /**

@@ -16,14 +16,14 @@
                                     <form method="POST" action="{{url("cintas")}}">
                                         @csrf
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control @error('idPelicula') is-invalid @enderror" id="idPelicula" placeholder=".." name="idPelicula" value="{{old("idPelicula")}}">
+                                            <input type="text" class="form-control @error('idPelicula') is-invalid @enderror" id="id_Pelicula" placeholder=".." name="idPelicula">
                                             <label for="idPelicula">Id de la pelicula</label>
                                             @error('idPelicula')
                                             <div class="invalid-feedback">{{$message}}<div>
                                                     @enderror
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control @error('codigo') is-invalid @enderror" id="codigo" placeholder=".." name="codigo" value="{{old("codigo")}}">
+                                                    <input type="text" class="form-control @error('codigo') is-invalid @enderror" id="codigo" placeholder=".." name="codigo">
                                                     <label for="codigo">Codigo de la cinta</label>
                                                     @error('codigo')
                                                     <div class="invalid-feedback">{{$message}}<div>

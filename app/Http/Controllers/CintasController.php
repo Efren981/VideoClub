@@ -36,6 +36,10 @@ class CintasController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'idPelicula' => 'required|max:20',
+            'codigo' => 'required',
+        ]);
         Cintas::create(['idPelicula'=>$request->idPelicula,'codigo'=>$request->codigo,]);
         return redirect()->route('cintas.index');
     }
@@ -57,9 +61,9 @@ class CintasController extends Controller
      * @param  \App\Models\Cintas  $cintas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cintas $cintas)
+    public function edit(Cintas $cinta)
     {
-        //
+        return view("cintas.update",compact('cinta'));
     }
 
     /**
@@ -69,9 +73,10 @@ class CintasController extends Controller
      * @param  \App\Models\Cintas  $cintas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cintas $cintas)
+    public function update(Request $request, Cintas $cinta)
     {
-
+          $cinta->update(['idPelicula'=>$request->idPelicula,'codigo'=>$request->codigo,]);
+          return redirect()->route('cintas.index');
     }
 
     /**
@@ -80,8 +85,9 @@ class CintasController extends Controller
      * @param  \App\Models\Cintas  $cintas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cintas $cintas)
+    public function destroy(Cintas $cinta)
     {
-
+        $cinta->delete();
+        return redirect()->route('cintas.index');
     }
 }

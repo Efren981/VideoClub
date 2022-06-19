@@ -19,25 +19,28 @@
                                     <div class="mt-3">
                                         <div class="card shadow-sm al">
                                             <div class="card-body">
+<<<<<<< HEAD
+
+=======
                                                 <form method="POST" action="{{route("devoluciones.update",$devolucione->id)}}">
                                                     @csrf
                                                     @method("PUT")
                                                     <div class="form-floating mb-3 ">
-                                                        <input type="text" class="form-control @error('idDetallePrestamos') is-invalid @enderror"
+                                                        <input type="text" class="form-control @error('id_detalle__prestamos') is-invalid @enderror" 
                                                         id="id_detalle__prestamos" placeholder=""
                                                                name="id_detalle__prestamos" value="{{$devolucione->id_detalle__prestamos}}">
                                                         <label for="id_detalle__prestamos">Numero de prestamo</label>
-                                                        @error('idDetallePrestamos')
+                                                        @error('id_detalle__prestamos')
                                                             <div class="invalid-feedback">{{$message}}</div>@enderror
                                                     </div>
-
+                                                    
 
                                                     <div class="form-floating mb-3">
-                                                        <input type="date" class="form-control @error('fechaDevolucion') is-invalid @enderror"
+                                                        <input type="date" class="form-control @error('fecha_devolucion') is-invalid @enderror" 
                                                         id="fecha_devolucion" placeholder=""
                                                                name="fecha_devolucion" value="{{$devolucione->fecha_devolucion}}">
                                                         <label for="fecha_devolucion">Fecha de Devolucion</label>
-                                                        @error('fechaDevolucion')
+                                                        @error('fecha_devolucion')
                                                             <div class="invalid-feedback">{{$message}}</div>@enderror
                                                     </div>
 
@@ -63,6 +66,7 @@
                                                         </div>
                                                     </div>
                                                 </form>
+>>>>>>> 4c8a96a8c96c9674e2f69721f3f830c3375a2d2e
                                             </div>
                                         </div>
                                     </div>
