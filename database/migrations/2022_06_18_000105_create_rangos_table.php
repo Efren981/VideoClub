@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('personas', function (Blueprint $table) {
+        Schema::create('rangos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nombre',30);
-            $table->string('apellidoPaterno', 30);
-            $table->string('apellidoMaterno',30);
-            $table->foreignId('id_rangos')->constrained('rangos');
+            $table->string('tipoRango',30);
         });
     }
 
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personas');
+        Schema::dropIfExists('rangos');
     }
 };
