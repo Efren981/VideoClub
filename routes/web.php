@@ -39,7 +39,7 @@ Route::resource('prestamos',\App\Http\Controllers\PrestamoController::class);
 
 Route::resource("actores",\App\Http\Controllers\ActorController::class);
 
-Route::resource("emp",\App\Http\Controllers\empleado::class);
+
 
 Auth::routes();
 
