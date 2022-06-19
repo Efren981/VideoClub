@@ -19,10 +19,10 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col" class=" justify-content-center text-center">Matricula</th>
+                                <th scope="col" class=" justify-content-center text-center">Id</th>
                                 <th scope="col" class=" justify-content-center text-center">Nombre</th>
-                                <th scope="col" class=" justify-content-center text-center">Telefono</th>
                                 <th scope="col" class=" justify-content-center text-center">Direccion</th>
+                                <th scope="col" class=" justify-content-center text-center">Telefono</th>
                                 <th colspan="2" scope="col" class=" justify-content-center text-center">Acciones</th>
 
                             </tr>
@@ -31,7 +31,7 @@
                             @foreach($datos as $socios)
                                 <tr scope="row">
                                     <th scope="col">{{$loop->index+1}}</th>
-                                    <td scope="col">{{$prestamos->fecha}}</td>
+                                    <td scope="col">{{$p->fecha}}</td>
                                     <td scope="col">{{$socios->nombre}}</td>
                                     <td scope="col">{{$socios->telefono}}</td>
                                     <td scope="col">{{$socios->direccion}}</td>
