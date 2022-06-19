@@ -48,24 +48,6 @@
                             <div class="col-3">
                                 <button class="btn btn-primary" type="submit"><span class="icon-checkmark" data-toggle="tooltip" title="Agregar nueva publicacion">Guardar</span></button>
                             </div>
-<<<<<<< HEAD
-                            <div class="row my-5 d-flex justify-content-center">
-                                <div class="col-3"></div>
-                                <div class="col-3">
-                                    <a href="{{url("socios")}}" class="btn btn-danger mb-4 text-white"><span class="icon-arrow-thin-left" data-toggle="tooltip" title="Regresar al menu principal">Cancelar</span></a>
-                                </div>
-                                <div class="col-3">
-                                    <button class="btn btn-primary" type="submit"><span class="icon-checkmark" data-toggle="tooltip" title="Agregar nueva publicacion">Guardar</span></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-5">
-                        <figure class="figure">
-                            <img src="{{url("img/sirueta.jpeg")}}" class="text-lg-end" height="300px" width="300px">
-                        </figure>
-                    </div>
-=======
                             <div class="col-3"></div>
                         </div>
                     </form>
@@ -74,7 +56,6 @@
                     <figure class="figure">
                         <img src="{{url("img/sirueta.jpeg")}}" class="text-lg-end" height="300px" width="300px">
                     </figure>
->>>>>>> cb8f80344d0a8d4873dc525efe89d8a3d1ce19f0
                 </div>
             </div>
         </div>
