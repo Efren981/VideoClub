@@ -6,7 +6,7 @@
 @section("content")
     <div class="row d-flex justify-content-center">
         <div class="col-6 ">
-            <h1 class="alert-primary text-center">VideoClub "STARS"</h1>
+            <h1 class="alert-primary text-center">Crear Socios</h1>
             <div class="row d-flex justify-content-center">
                 <div class="col">
                     <figure class="figure">

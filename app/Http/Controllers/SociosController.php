@@ -65,9 +65,9 @@ class SociosController extends Controller
      * @param  \App\Models\Socios  $socios
      * @return \Illuminate\Http\Response
      */
-    public function edit(Socios $socios)
+    public function edit(Socios $socio)
     {
-        return view('socios.update',compact("socios"));
+        return view('socios.update',compact("socio"));
     }
 
     /**
@@ -77,14 +77,14 @@ class SociosController extends Controller
      * @param  \App\Models\Socios  $socios
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Socios $socios)
+    public function update(Request $request, Socios $socio)
     {
         $request->validate([
             "telefono"=>"required|min:10|max:13|unique:socios",
             "direccion"=>"required|unique:socios",
         ],[],["name"=>"nombre","content"=>"contenido"]);
 
-        $socios->update(["matricula"=>$request->matricula,
+        $socio->update(["matricula"=>$request->matricula,
             "telefono"=>$request->telefono,
             "direccion"=>$request->direccion]);
         return redirect()->route("socios.index");
@@ -96,9 +96,9 @@ class SociosController extends Controller
      * @param  \App\Models\Socios  $socios
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Socios $socios)
+    public function destroy(Socios $socio)
     {
-        $socios->delete();
+        $socio->delete();
         return redirect()->route("socios.index");
     }
 }
