@@ -9,7 +9,7 @@ class Actores extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'nombre',
-        'apellido'
+        'idPersona',
+        'nombreArtistico'
     ];
 }

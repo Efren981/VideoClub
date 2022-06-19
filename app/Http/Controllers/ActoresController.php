@@ -25,7 +25,7 @@ class ActoresController extends Controller
      */
     public function create()
     {
-        //
+        return  view('actores.create');
     }
 
     /**
@@ -36,8 +36,8 @@ class ActoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
-
+        Actores::create(['idPersona'=>$request->idPersona,'nombreArtistico'=>$request->nombreArtistico]);
+        return redirect()->route('actores.index');
 
     }
 
