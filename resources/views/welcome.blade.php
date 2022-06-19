@@ -37,26 +37,67 @@
             @endif
 
             <div class="max-w-6xl mx-auto sm:px-3 lg:px-8">
-                <div class="text-center">
-                    <img src="img/loge.png" class="text-center" alt="" width="650" height="350">
+                <div class="text-center flex-column">
+                    <img src="{{url("img/loge.png")}}" alt="" width="600" height="350">
                 </div>
 
                 <div class="mt-2 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <h1 class="alert-success">manis</h1>
+                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
+                            <div class="flex items-center">
+                                <img src="{{url("img/buzz.jpeg")}}" alt="" width="120" height="80">
+                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Lightyear</div>
+                            </div>
+                            <div>
+                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                    Buzz Lightyear se embarca en una aventura intergaláctica con un grupo de reclutas ambiciosos y su compañero robot..</div>
+                            </div>
                         </div>
 
                         <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-
+                            <div class="flex items-center">
+                                <img src="{{url("img/jura.png")}}" alt="" width="120" height="80">
+                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Jurassic Park Dominion</div>
+                            </div>
+                            <div>
+                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                    La isla Nublar y su parque han sido destruidos, pero el problema no se terminó.
+                                    Con los dinosaurios dispersos por todo el mundo, la convivencia entre el presente y
+                                    el pasado alcanza un nuevo nivel de tensión.</div>
+                            </div>
                         </div>
 
                         <div class="p-6 border-t border-gray-200 dark:border-gray-700">
+                            <div class="flex items-center">
+                                <img src="{{url("img/williams.jpg")}}" alt="" width="120" height="80">
+                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">El Método Williams</div>
+                            </div>
 
+                            <div>
+                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                    Biopic sobre Richard Williams, un padre inasequible al desaliento que ayudó a criar
+                                    a dos de las deportistas más extraordinarias de todos los tiempos, dos atletas que
+                                    acabarían cambiando para siempre el deporte del tenis. Richard tenía una visión muy
+                                    clara del futuro de sus hijas y sirviéndose de métodos poco convencionales, elaboró
+                                    un plan que llevaría a Venus y Serena Williams de las calles de Compton, California,
+                                    al olimpo de deporte convirtiéndolas en iconos legendarios.
+                                </div>
+                            </div>
                         </div>
 
                         <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            
+                            <div class="flex items-center">
+                                <img src="{{url("img/uncharted.jpg")}}" alt="" width="120" height="80">
+                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Uncharted</div>
+                            </div>
+
+                            <div>
+                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                                    El cazador de tesoros Victor Sullivan recluta a Nathan Drake para que lo ayude a
+                                    recuperar una fortuna de 500 años de antigüedad. Lo que comienza como un atraco se
+                                    convierte en una competencia contra el despiadado Santiago Moncada.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,17 +109,13 @@
                                 <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
                             </svg>
 
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
+                            <a href="/" class="ml-1 underline">
+                                Adquiere tus cintas
                             </a>
 
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
                                 <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                             </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
                         </div>
                     </div>
 

@@ -22,9 +22,9 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+            <div class="container text-center flex">
                 <a class="navbar-brand" style="color: red" href="{{ url('/') }}">
-                    <img src="img/primitive.png" alt="" width="150" height="75">
+                    <img src={{url("img/primitive.png")}} alt="" width="150" height="75">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

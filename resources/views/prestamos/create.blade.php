@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section("prestamos")
     active
 @endsection
@@ -22,6 +21,32 @@
                                         @error('date')
                                         <div class="invalid-feedback">{{$message}}</div>
                                         @enderror
+<<<<<<< HEAD
+=======
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control @error ('socio') is-invalid @enderror" id="ap1" placeholder=".." name="socio">
+                                            <label for="ap1">Socio</label>
+
+                                        </div>
+                                        @error('socio')
+                                        <div class="invalid-feedback">{{$message}}</div>
+                                        @enderror
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control @error ('pelicula') is-invalid @enderror" id="ap2" placeholder=".." name="pelicula">
+                                            <label for="ap2">Pelicula</label>
+                                        </div>
+                                        @error('pelicula')
+                                        <div class="invalid-feedback">{{$message}}</div>
+                                        @enderror
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control @error ('cinta') is-invalid @enderror" id="ap2"placeholder=".." name="cinta">
+                                            <label for="ap2">Cinta</label>
+                                        </div>
+                                        @error('cinta')
+                                        <div class="invalid-feedback">{{$message}}</div>
+                                        @enderror
+
+>>>>>>> refs/remotes/origin/master
                                         <div class="row my-5 d-flex justify-content-center">
                                             <div class="col-3"></div>
                                             <div class="col-3">
