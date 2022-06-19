@@ -14,8 +14,8 @@ class EsperasController extends Controller
      */
     public function index()
     {
-        $esperas=Esperas::all();
-        return view("esperas.create",compact("esperas"));
+        $datos=Esperas::all();
+        return view("esperas.index",compact("datos"));
     }
 
     /**
@@ -25,7 +25,7 @@ class EsperasController extends Controller
      */
     public function create()
     {
-        //
+        return view("esperas.create");
     }
 
     /**
@@ -36,7 +36,8 @@ class EsperasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Esperas::create(['idSocio'=>$request->idSocio,'idPelicula'=>$request->idPelicula,'prioridad'=>$request->prioridad,'fecha'=>$request->fecha,'estado'=>$request->estado]);
+        return redirect()->route('esperas.index');
     }
 
     /**
@@ -58,7 +59,7 @@ class EsperasController extends Controller
      */
     public function edit(Esperas $esperas)
     {
-        //
+
     }
 
     /**
@@ -68,9 +69,10 @@ class EsperasController extends Controller
      * @param  \App\Models\Esperas  $esperas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Esperas $esperas)
+    public function update(Request $request, Esperas $espera)
     {
-        //
+        $espera->update(['idSocio'=>$request->idSocio,'idPelicula'=>$request->idPelicula,'prioridad'=>$request->prioridad,'fecha'=>$request->fecha,'estado'=>$request->estado]);
+        return redirect()->route('esperas.index');
     }
 
     /**
@@ -79,8 +81,9 @@ class EsperasController extends Controller
      * @param  \App\Models\Esperas  $esperas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Esperas $esperas)
+    public function destroy(Esperas $espera)
     {
-        //
+        $espera->delete();
+        return redirect()->route('esperas.index');
     }
 }
