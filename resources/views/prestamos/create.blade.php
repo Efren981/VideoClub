@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section("prestamos")
     active
 @endsection
@@ -31,7 +30,7 @@
                                         <div class="invalid-feedback">{{$message}}</div>
                                         @enderror
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control @error ('pelicula') is-invalid @enderror" id="ap2"placeholder=".." name="pelicula">
+                                            <input type="text" class="form-control @error ('pelicula') is-invalid @enderror" id="ap2" placeholder=".." name="pelicula">
                                             <label for="ap2">Pelicula</label>
                                         </div>
                                         @error('pelicula')

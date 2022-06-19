@@ -7,13 +7,13 @@
             <div class="card">
                 <div class="card-header alert-primary text-center"> BIENVENIDO </div>
 
-                <div class="card-body text-center">
+                <div class="card-body flex-column text-center">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-                    <img src="img/loge.png">
+                    <img src="{{url("img/loge.png")}}">
                 </div>
             </div>
         </div>
