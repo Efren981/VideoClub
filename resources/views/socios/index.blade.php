@@ -6,13 +6,11 @@
 @section("content")
     <div class="row">
         <div class="col">
-            <div class="row">
-                <div class="col">
-                    <h1 class="text-center mb-5">Socios</h1>
-                </div>
-            </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-6">
+                    <div class="col">
+                        <h1 class="text-center mb-5 alert-primary text-center">Socios</h1>
+                    </div>
                     <div class="card">
                         <a href="{{url("socios/create")}}" class="btn btn-dark btn-sm mb-4 text-white"data-toggle="tooltip" title="Cargar nuevo socio"><span class="icon-pen"> Nuevo</span></a>
                         <div class="card-header">
@@ -33,12 +31,13 @@
                                     <td>{{$socios->idPersona}}</td>
                                     <td>{{$socios->direccion}}</td>
                                     <td>{{$socios->telefono}}</td>
-                                    <td><a href="{{route("socios.edit",$socios->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar difusion"><span class="material-symbols-outlined"></span></a>dete</td>
-                                    <td><form action="{{route("socios.destroy",$socios->id)}}" method="post">
+                                    <td style="display: flex"><a href="{{route("socios.edit",$socios->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar difusion"><i class="bi bi-plus-lg"></i></a>
+                                        <form action="{{route("socios.destroy",$socios->id)}}" method="post">
                                             @csrf
                                             @method('delete')
-                                            <button class="btn btn-danger btn-sm" type="submit" data-toggle="tooltip" title="Eliminar esta difusion"><span class="icon-bin">Eliminar</span></button>
-                                        </form></td></td>
+                                            <button class="btn btn-danger btn-sm" type="submit" data-toggle="tooltip" title="Eliminar esta difusion"><i class="bi bi-trash"></i></button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
