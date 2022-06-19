@@ -36,7 +36,7 @@ class DevolucionesController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(["idDetallePrestamos"=>"numeric|required",
+        $validate=$request->validate(["idDetallePrestamos"=>"numeric|required",
             "fechaDevolucion"=>"required",
             "observaciones"=>"required"],
             [],
