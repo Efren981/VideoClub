@@ -36,7 +36,11 @@ class EsperasController extends Controller
      */
     public function store(Request $request)
     {
-        Esperas::create(['idSocio'=>$request->idSocio,'idPelicula'=>$request->idPelicula,'prioridad'=>$request->prioridad,'fecha'=>$request->fecha,'estado'=>$request->estado]);
+        Esperas::create(['idSocio'=>$request->idSocio,
+        'idPelicula'=>$request->idPelicula,
+        'prioridad'=>$request->prioridad,
+        'fecha'=>$request->fecha,
+        'estado'=>$request->estado,]);
         return redirect()->route('esperas.index');
     }
 

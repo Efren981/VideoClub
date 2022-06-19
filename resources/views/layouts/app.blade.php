@@ -86,10 +86,6 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="{{url("rangos")}}"
-                            </li>
-
-                            <li class="nav-item">
                                 <a href="{{url("prestamos")}}" class="nav-link @yield("prestamos_active")" data-toggle="tooltip" title="Ir a la seccion de Prestamos">Prestamos</a>
                             </li>
 

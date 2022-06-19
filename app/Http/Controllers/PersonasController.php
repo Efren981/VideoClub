@@ -41,6 +41,7 @@ class PersonasController extends Controller
             "nombre"=>$request->nombre,
             "apellidoPaterno"=>$request->apellidoPaterno,
             "apellidoMaterno"=>$request->apellidoMaterno,
+            "id_rangos"=>$request->id_rangos,
         ]);
         return redirect()->route('personas.index');
     }
@@ -76,8 +77,8 @@ class PersonasController extends Controller
      */
     public function update(Request $request, Personas $persona)
     {
-        $request->validate(['nombre'=>'required|max:30|min:3|unique:personas','apellidoPaterno'=>'required|max:30|min:3|unique:personas','apellidoMaterno'=>'required|max:30|min:3|unique:personas']);
-        $persona->update(['nombre'=>$request->nombre,'apellidoPaterno'=>$request->apellidoPaterno,'apellidoMaterno'=>$request->apellidoMaterno]);
+        $request->validate(['nombre'=>'required|max:30|min:3','apellidoPaterno'=>'required|max:30','apellidoMaterno'=>'required|max:30|min:3','id_rangos'=>"required"]);
+        $persona->update(['nombre'=>$request->nombre,'apellidoPaterno'=>$request->apellidoPaterno,'apellidoMaterno'=>$request->apellidoMaterno,'id_rangos'=>$request->id_rangos]);
         return redirect()->route('personas.index');
     }
 

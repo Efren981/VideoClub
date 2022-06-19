@@ -23,6 +23,7 @@
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Apellido Paterno</th>
                                 <th scope="col">Apellido Materno</th>
+                                <th scope="col">Rango</th>
                                 <th scope="col">Acciones</th>
 
                             </tr>
@@ -34,6 +35,7 @@
                                     <td>{{$personas->nombre}}</td>
                                     <td>{{$personas->apellidoPaterno}}</td>
                                     <td>{{$personas->apellidoMaterno}}</td>
+                                    <td>{{$personas->id_rangos}}</td>
                                     <td style="display: flex"><a href="{{route("personas.edit",$personas->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar personas"><i class="bi bi-plus-lg"></i></a>
                                     <form action="{{route("personas.destroy",$personas->id)}}" method="post">
                                             @csrf

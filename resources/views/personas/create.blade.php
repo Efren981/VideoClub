@@ -19,33 +19,41 @@
                                             <input type="text" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder=".." name="nombre" value="{{old("nombre")}}">
                                             <label for="nombre">Nombre</label>
                                             @error('nombre')
-                                            <div class="invalid-feedback">{{$message}}<div>
+                                            <div class="invalid-feedback">{{$message}}</div>
                                                     @enderror
                                         </div>
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control @error('apellidoPaterno') is-invalid @enderror" id="ap1" placeholder=".." name="apellidoPaterno" value="{{old("apellidoPaterno")}}">
                                             <label for="ap1">Apellido Paterno</label>
                                             @error('apellidoPaterno')
-                                            <div class="invalid-feedback">{{$message}}<div>
+                                            <div class="invalid-feedback">{{$message}}</div>
                                              @enderror
                                         </div>
                                         <div class="form-floating mb-3">
                                             <input type="text" class="form-control @error('apellidoMaterno') is-invalid @enderror" id="ap2"placeholder=".." name="apellidoMaterno" value="{{old("apellidoMterno")}}">
                                             <label for="ap2">Apellido Materno</label>
                                             @error('apellidoMaterno')
-                                            <div class="invalid-feedback">{{$message}}<div>
+                                            <div class="invalid-feedback">{{$message}}</div>
                                              @enderror
                                         </div>
-                                        <div class="row my-5 d-flex justify-content-center">
-                                            <div class="col-3"></div>
-                                            <div class="col-3">
+                                        <div class="form-label">
+                                            <select class="form-control @error ('id_rangos') is-invalid @enderror" id="id_rangos" name="id_rangos">
+                                                <option selected>Selecciona un rango</option>
+                                                <option selected value="1">Socio</option>
+                                                <option selected value="2">Director</option>
+                                                <option selected value="3">Actor</option>
+                                            </select>
+                                            @error('id_rangos')
+                                            <div class="invalid-feedback">{{$message}}</div>
+                                            @enderror
+                                        </div>
+                                        <div class="row my-5 flex justify-content-center">
+                                            <div class="col-5">
                                                 <a href="{{url("personas")}}" class="btn btn-danger mb-4 text-white"><span class="icon-arrow-thin-left" data-toggle="tooltip" title="Regresar al menu principal">Cancelar</span></a>
-
                                             </div>
-                                            <div class="col-3">
+                                            <div class="col-5">
                                                 <button class="btn btn-primary" type="submit"><span class="icon-checkmark" data-toggle="tooltip" title="Agregar nueva publicacion">Guardar</span></button>
                                             </div>
-                                            <div class="col-3"></div>
                                         </div>
                                     </form>
                                 </div>
