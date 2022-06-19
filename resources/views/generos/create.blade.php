@@ -13,7 +13,7 @@
                         <form method="POST" action="{{url("generos")}}">
                             @csrf
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control @error('descripcionGenero') is-invalid @enderror" id="desc" placeholder=".." name="descripcionGenero" value="{{old("descripcionGeneros")}}">
+                                <input type="text" class="form-control @error('descripcionGenero') is-invalid @enderror" id="desc" placeholder=".." name="descripcionGenero">
                                 <label for="desc"> Descripcion Genero</label>
                                 @error('descripcionGenero')
                                     <div class="invalid-feedback">{{$message}}<div>
