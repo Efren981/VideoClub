@@ -5,16 +5,15 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center">{{ __('Bienvenido') }}</div>
+                <div class="card-header alert-primary text-center"> BIENVENIDO </div>
 
-                <div class="card-body">
+                <div class="card-body text-center">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('') }}
+                    <img src="img/loge.png">
                 </div>
             </div>
         </div>
