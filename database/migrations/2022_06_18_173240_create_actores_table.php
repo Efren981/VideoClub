@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('idPersona')->constrained('personas');
-
+            $table->string('nombreArtistico',50);
         });
     }
 

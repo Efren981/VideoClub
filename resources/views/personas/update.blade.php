@@ -19,21 +19,21 @@
                                 <input type="text" class="form-control @error('nombre') is-invalid @enderror" id="newname" placeholder=".." name="nombre" value="{{$persona->nombre}}">
                                 <label for="newname">Nuevo nombre</label>
                                 @error('nombre')
-                                <div class="invalid-feedback">{{$message}}<div>
-                                        @enderror
+                                <div class="invalid-feedback">{{$message}}</div>
+                                @enderror
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control @error('apellidoPaterno') is-invalid @enderror" id="newapp" placeholder=".." name="apellidoPaterno" value="{{$persona->apellidoPaterno}}">
                                 <label for="newapp">Nuevo apellido paterno</label>
                                 @error('apellidoPaterno')
-                                <div class="invalid-feedback">{{$message}}<div>
-                                        @enderror
+                                <div class="invalid-feedback">{{$message}}</div>
+                                @enderror
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control @error('apellidoMaterno') is-invalid @enderror" id="newamp" placeholder=".." name=apellidoMaterno value="{{$persona->apellidoMaterno}}">
                                 <label for="newamp">Nuevo apellido materno</label>
                                 @error('apellidoMaterno')
-                                <div class="invalid-feedback">{{$message}}<div>
+                                <div class="invalid-feedback">{{$message}}</div>
                                 @enderror
                             </div>
                             <div class="form-floating mb-6">
@@ -49,21 +49,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row my-5 d-flex justify-content-center">
-                        <div class="col-3"></div>
-                        <div class="col-3">
-                            <a href="{{url("personas")}}" class="btn btn-danger mb-4 text-white" data-toggle="tooltip" title="Regresar el menu principal">Cancelar</a>
+                        <div class="row my-5 d-flex justify-content-center">
+                            <div class="col-3"></div>
+                            <div class="col-3">
+                                <a href="{{url("personas")}}" class="btn btn-danger mb-4 text-white" data-toggle="tooltip" title="Regresar el menu principal">Cancelar</a>
 
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-primary" type="submit" data-toggle="tooltip" title="Guardar cambios">Guardar</button>
+                            </div>
+                            <div class="col-3"></div>
                         </div>
-                        <div class="col-3">
-                            <button class="btn btn-primary" type="submit" data-toggle="tooltip" title="Guardar cambios">Guardar</button>
-                        </div>
-                        <div class="col-3"></div>
-                    </div>
+                </div>
+                </div>
+                </form>
             </div>
         </div>
-        </form>
-    </div>
-    </div>
     </div>
 @endsection

@@ -12,24 +12,25 @@
                <div class="text-center">
                 <form class="mt-4" method="POST" action="{{url("peliculas")}}">
                     @csrf
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control @error ('titulo') is-invalid @enderror" id="titulo" name="titulo">
-                        <label for="titulo">Titulo</label>
-                        @error('titulo')
-                        <div class="invalid-feedback">{{$message}}</div>
-                        @enderror
-                    </div>
                     <div class="form-floating mb-6">
-                        <select class="form-control @error ('genero') is-invalid @enderror" id="genero" name="genero">
+                        <select class="form-control @error ('idGenero') is-invalid @enderror" id="idGenero" name="idGenero">
                             <option selected>Eliga el genero de la pelicula</option>
                             <option value="1">eroticas</option>
                             <option value="2">eroticas recomendacion de pipe</option>
                             <option value="3">eroticas de faraón love shady</option>
                         </select>
-                            @error('genero')
+                            @error('idGenero')
                             <div class="invalid-feedback">{{$message}}</div>
                         @enderror
                     </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control @error ('titulo') is-invalid @enderror" id="titulo" name="titulo" value="{{old("titulo")}}">
+                        <label for="titulo">Titulo</label>
+                        @error('titulo')
+                        <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
+                    </div>
+
                     <div class="row my-5 d-flex justify-content-center">
                         <div class="col-3">
                             <a href="{{url("peliculas")}}" class="btn btn-danger mb-4 text-white"><span class="icon-arrow-thin-left" data-toggle="tooltip" title="Regresar al menu principal">Cancelar</span></a>

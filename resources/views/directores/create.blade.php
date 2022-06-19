@@ -19,24 +19,19 @@
                                             <div class="col">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control @error('name_art') is-invalid @enderror"
-                                                           id="nombre_art" placeholder="nombre" name="nombre_art">
+                                                           id="nombre_art" placeholder="nombre" name="nombre_art" value="{{old("nombre_art")}}}">
                                                     <label for="nombre_art">Nombre Artistico</label>
                                                     @error('name_art')
                                                     <div class="invalid-feedback">{{$message}}</div>
                                                     @enderror
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <div class="form-label">
-                                                        <select class="form-control @error ('idPersona') is-invalid @enderror" id="idPersona" name="idPersona">
-                                                            <option selected>Selecciona un rango</option>
-                                                            <option selected value="1">Socio</option>
-                                                            <option selected value="2">Director</option>
-                                                            <option selected value="3">Actor</option>
-                                                        </select>
-                                                        @error('idPersona')
-                                                        <div class="invalid-feedback">{{$message}}</div>
-                                                        @enderror
-                                                    </div>
+                                                    <input type="text" class="form-control @error('name_art') is-invalid @enderror"
+                                                           id="nombre_real" placeholder="nombre" name="id_persona" value="{{old("nombre_art")}}">
+                                                    <label for="nombre_real">Nombre Real</label>
+                                                    @error('name_art')
+                                                    <div class="invalid-feedback">{{$message}}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>
@@ -44,6 +39,7 @@
                                             <div class="col-3"></div>
                                             <div class="col-3">
                                                 <a href="{{url("registro_director")}}" class="btn btn-danger mb-4 text-white"><span class="icon-arrow-thin-left" data-toggle="tooltip" title="Regresar al menu principal">Cancelar</span></a>
+
                                             </div>
                                             <div class="col-3">
                                                 <button class="btn btn-primary" type="submit"><span class="icon-checkmark" data-toggle="tooltip" title="Agregar nueva publicacion">Guardar</span></button>

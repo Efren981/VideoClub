@@ -75,9 +75,9 @@ class PeliculasController extends Controller
      * @param  \App\Models\Peliculas  $peliculas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Peliculas $peliculas)
+    public function update(Request $request, Peliculas $pelicula)
     {
-
+        $pelicula->update(["idGenero"=>$request->idGenero,"titulo"=>$request->titulo]);
         return  redirect()->route('peliculas.index');
         //
     }
@@ -88,9 +88,9 @@ class PeliculasController extends Controller
      * @param  \App\Models\Peliculas  $peliculas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Peliculas $peliculas)
+    public function destroy(Peliculas $pelicula)
     {
-
+        $pelicula->delete();
         return redirect()->route('peliculas.index');
         //
     }

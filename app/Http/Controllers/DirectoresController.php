@@ -14,8 +14,7 @@ class DirectoresController extends Controller
      */
     public function index()
     {
-        $datos=Directores::all();
-        return view("directores.index",compact("datos"));
+        //
     }
 
     /**
@@ -25,7 +24,7 @@ class DirectoresController extends Controller
      */
     public function create()
     {
-        return view("directores.create");
+        //
     }
 
     /**
@@ -36,14 +35,7 @@ class DirectoresController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            "nombreArtistico"=>"required|min:10|max:20",
-            "idPersona"=>"numeric|required|min:2",
-        ]);
-        Directores::create([
-            "idPersona"=>$request->idPersona,
-            "nombreArtistico"=>$request->nombreArtistico,
-        ]);
+        //
     }
 
     /**
@@ -65,7 +57,7 @@ class DirectoresController extends Controller
      */
     public function edit(Directores $directores)
     {
-        return view("directores.update",compact("directores"));
+        //
     }
 
     /**
@@ -77,14 +69,7 @@ class DirectoresController extends Controller
      */
     public function update(Request $request, Directores $directores)
     {
-        $request->validate([
-            "nombreArtistico"=>"required|min:10|max:20",
-            "idPersona"=>"numeric|required|min:2",
-        ]);
-        $directores::updated([
-            "idPersona"=>$request->idPersona,
-            "nombreArtistico"=>$request->nombreArtistico,
-        ]);
+        //
     }
 
     /**
@@ -95,7 +80,6 @@ class DirectoresController extends Controller
      */
     public function destroy(Directores $directores)
     {
-        $directores->delete();
-        return redirect()->route("directores.index");
+        //
     }
 }
