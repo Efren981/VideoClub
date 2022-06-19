@@ -39,11 +39,6 @@ Route::resource('prestamos',\App\Http\Controllers\PrestamoController::class);
 
 Route::resource("actores",\App\Http\Controllers\ActorController::class);
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> refs/remotes/origin/master
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
