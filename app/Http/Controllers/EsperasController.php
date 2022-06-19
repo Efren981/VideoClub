@@ -36,13 +36,7 @@ class EsperasController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'idSocio'=>'required|max:10',
-            'idPelicula'=> 'required|max:10',
-            'prioridad' => 'required',
-            'fecha'=>'required',
-            'estado'=>'required',
-        ]);
+
         Esperas::create(['idSocio'=>$request->idSocio,
         'idPelicula'=>$request->idPelicula,
         'prioridad'=>$request->prioridad,
@@ -68,9 +62,9 @@ class EsperasController extends Controller
      * @param  \App\Models\Esperas  $esperas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Esperas $esperas)
+    public function edit(Esperas $espera)
     {
-
+        return view("esperas.update",compact(espera));
     }
 
     /**
