@@ -28,6 +28,7 @@
                             @foreach($datos as $actores)
                                 <tr scope="row">
                                     <th scope="col">{{$loop->index+1}}</th>
+
                                     <td scope="col">{{$actores->idPersona}}</td>
                                     <td scope="col">{{$actores->nombreArtistico}}</td>
                                     <td scope="col"><a href="{{route("actores.edit",$actores->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar personas"><span class="icon-compose">Editar</span></a></td>
