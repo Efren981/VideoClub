@@ -41,7 +41,6 @@
                                 <div class="col-3">
                                     <button class="btn btn-primary" type="submit"><span class="icon-checkmark" data-toggle="tooltip" title="Agregar nueva publicacion">Guardar</span></button>
                                 </div>
-                                <div class="col-3"></div>
                             </div>
                         </form>
                     </div>
