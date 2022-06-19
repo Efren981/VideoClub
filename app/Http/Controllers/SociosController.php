@@ -37,11 +37,12 @@ class SociosController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "telefono"=>"required|min:10|max:13|unique:socios",
+            "telefono"=>"required|min:10|max:13",
             "direccion"=>"required|unique:socios",
             ],[],["name"=>"nombre","content"=>"contenido"]);
 
         Socios:: create([
+            "idPersona"=>$request->idPersona,
             "telefono" =>$request->telefono,
             "direccion" =>$request->direccion,
         ]);
@@ -79,14 +80,14 @@ class SociosController extends Controller
      */
     public function update(Request $request, Socios $socio)
     {
-        $request->validate([
-            "telefono"=>"required|min:10|max:13|unique:socios",
+        $request->validate(["idPersona"=>"required",
             "direccion"=>"required|unique:socios",
+            "telefono"=>"required|min:10|max:13|unique:socios",
         ],[],["name"=>"nombre","content"=>"contenido"]);
 
-        $socio->update(["matricula"=>$request->matricula,
-            "telefono"=>$request->telefono,
-            "direccion"=>$request->direccion]);
+        $socio->update(["idPersona"=>$request->idPersona,
+            "direccion"=>$request->direccion,
+            "telefono"=>$request->telefono]);
         return redirect()->route("socios.index");
     }
 

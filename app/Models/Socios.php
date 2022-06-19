@@ -9,9 +9,8 @@ class Socios extends Model
 {
     use HasFactory;
     protected $fillable=[
-        "idSocio",
         "idPersona",
         "direccion",
-        "telefono",
+        "telefono"
     ];
 }
