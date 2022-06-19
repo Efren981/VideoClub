@@ -64,10 +64,10 @@ class PeliculasController extends Controller
      * @param  \App\Models\Peliculas  $peliculas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Peliculas $peliculas)
+    public function edit(Peliculas $pelicula)
     {
-        $peliculas=Peliculas::finorFail($id);
-        return view('peliculas.edit',compact('peliculas'));
+
+        return view('peliculas.update',compact('pelicula'));
         //
     }
 

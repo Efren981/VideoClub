@@ -11,7 +11,6 @@
                 <form action="{{route('peliculas.update',$pelicula->id_pelicula)}}" method="post">
                     @csrf
                     @method('PUT')
-
                     <div class="form-group">
                         <label for="id_pelicula">id_pelicula</label>
                         <input type="text" class="form-control" name="id_pelicula" required maxlength="50"value="{{$pelicula->id_pelicula}}">
@@ -20,7 +19,6 @@
                         <label for="titulo">titulo</label>
                         <input type="text" class="form-control" name="titulo" required maxlength="50"value="{{$pelicula->titulo}}">
                     </div>
-
                     <div class="for-group">
                         <input type="submit" class="btn btn-primary" value="guardar">
                         <input type="reset" class="btn btn-default" value="cancelar">
