@@ -60,9 +60,9 @@ class ActoresController extends Controller
      * @param  \App\Models\Actores  $actores
      * @return \Illuminate\Http\Response
      */
-    public function edit(Actores $actores)
+    public function edit(Actores $actore)
     {
-        //
+        return view('actores.update',compact("actore"));
     }
 
     /**
@@ -72,9 +72,10 @@ class ActoresController extends Controller
      * @param  \App\Models\Actores  $actores
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Actores $actores)
+    public function update(Request $request, Actores $actore)
     {
-        //
+        $actore->update(['idPersona'=>$request->idPersona,'nombreArtistico'=>$request->nombreArtistico]);
+        return redirect()->route('actores.index');
     }
 
     /**
@@ -83,8 +84,9 @@ class ActoresController extends Controller
      * @param  \App\Models\Actores  $actores
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Actores $actores)
+    public function destroy(Actores $actore)
     {
-        //
+        $actore->delete();
+        return redirect()->route('actores.index');
     }
 }
