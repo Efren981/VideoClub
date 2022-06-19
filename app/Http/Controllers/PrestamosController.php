@@ -14,6 +14,8 @@ class PrestamosController extends Controller
      */
     public function index()
     {
+      $datos= Prestamos::all();
+      return  view('prestamos.index',compact('datos'));
         //
     }
 
@@ -25,6 +27,8 @@ class PrestamosController extends Controller
     public function create()
     {
         //
+        $datos=Prestamos::all();
+        return view('prestamos.create',compact('datos'));
     }
 
     /**
@@ -36,6 +40,18 @@ class PrestamosController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate(["date"=>"required",
+            "socio"=>"required",
+            "pelicula"=>"required",
+            "cinta"=>"required"
+        ]);
+        Prestamos::created([
+            'fecha'=>$request->fecha,
+            'socios'=>$request->socios,
+            'peliculas'=>$request->peliculas,
+            'cintas'=>$request->cintas
+        ]);
+        return redirect()->route('prestamos.index');
     }
 
     /**
@@ -47,6 +63,7 @@ class PrestamosController extends Controller
     public function show(Prestamos $prestamos)
     {
         //
+        return view('prestamos.update',compact('prestamos'));
     }
 
     /**
@@ -70,6 +87,8 @@ class PrestamosController extends Controller
     public function update(Request $request, Prestamos $prestamos)
     {
         //
+        $prestamos->update(['fecha'=>$request->fecha]);
+        return redirect()->route('prestamos.update');
     }
 
     /**
@@ -81,5 +100,7 @@ class PrestamosController extends Controller
     public function destroy(Prestamos $prestamos)
     {
         //
+        $prestamos->delete();
+        return redirect()->route('prestamos.update');
     }
 }

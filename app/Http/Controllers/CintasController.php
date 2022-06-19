@@ -15,7 +15,7 @@ class CintasController extends Controller
     public function index()
     {
         $cintas=Cintas::all();
-        return view('cinta.index',compact('cintas'));
+        return view('cintas.index',compact('cintas'));
     }
 
     /**
