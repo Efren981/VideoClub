@@ -37,6 +37,8 @@ class ActoresController extends Controller
     public function store(Request $request)
     {
         //
+
+
     }
 
     /**
@@ -71,6 +73,9 @@ class ActoresController extends Controller
     public function update(Request $request, Actores $actores)
     {
         //
+        $request->validate(["nombre"=>"required",
+            "apellido"=>"required"
+        ],[],["name"=>"nombre","content"=>"contenido"]);
     }
 
     /**

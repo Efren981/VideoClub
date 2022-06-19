@@ -15,7 +15,7 @@
                                     <form method="POST" action="{{url("prestamos")}}">
                                         @csrf
                                         <div class="form-floating mb-3">
-                                            <input type="date" class="form-control @error ('fechaPrestamo') is-invalid @enderror" id="fechaPrestamo" placeholder=".." name="fechaPrestamo">
+                                            <input type="date" class="form-control @error ('fechaPrestamo') is-invalid @enderror" id="fechaPrestamo" placeholder=".." name="fechaPrestamo" value="{{old("fechaPrestamo")}}">
                                             <label for="nombre">Fecha Prestamo</label>
                                             @error('fechaPrestamo')
                                             <div class="invalid-feedback">{{$message}}</div>

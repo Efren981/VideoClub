@@ -13,7 +13,7 @@
                 <form class="mt-4" method="POST" action="{{url("peliculas")}}">
                     @csrf
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control @error ('titulo') is-invalid @enderror" id="titulo" name="titulo">
+                        <input type="text" class="form-control @error ('titulo') is-invalid @enderror" id="titulo" name="titulo" value="{{old("titulo")}}">
                         <label for="titulo">Titulo</label>
                         @error('titulo')
                         <div class="invalid-feedback">{{$message}}</div>

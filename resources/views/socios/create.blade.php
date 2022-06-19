@@ -20,21 +20,21 @@
                     <form method="POST" action="{{url("socios")}}">
                         @csrf
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control @error ('idPersona') is-invalid @enderror" id="idPersona" placeholder=".." name="idPersona">
+                            <input type="text" class="form-control @error ('idPersona') is-invalid @enderror" id="idPersona" placeholder=".." name="idPersona" value="{{old("idPersona")}}">
                             <label for="idPersona">Numero de socio</label>
                             @error('idPersona')
                             <div class="invalid-feedback">{{$message}}</div>
                             @enderror
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control @error ('direccion') is-invalid @enderror" id="direccion" placeholder=".." name="direccion">
+                            <input type="text" class="form-control @error ('direccion') is-invalid @enderror" id="direccion" placeholder=".." name="direccion" value="{{old("direccion")}}">
                             <label for="direccion">Direccion</label>
                             @error('direccion')
                             <div class="invalid-feedback">{{$message}}</div>
                             @enderror
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control @error ('telefono') is-invalid @enderror" id="telefono" placeholder=".." name="telefono">
+                            <input type="text" class="form-control @error ('telefono') is-invalid @enderror" id="telefono" placeholder=".." name="telefono"value="{{old("telefono")}}">
                             <label for="telefono">Telefono</label>
                             @error('telefono')
                             <div class="invalid-feedback">{{$message}}</div>

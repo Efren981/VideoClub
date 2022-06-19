@@ -19,7 +19,7 @@
                                             <div class="col">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control @error('name_art') is-invalid @enderror"
-                                                           id="nombre_art" placeholder="nombre" name="nombre_art">
+                                                           id="nombre_art" placeholder="nombre" name="nombre_art" value="{{old("nombre_art")}}}">
                                                     <label for="nombre_art">Nombre Artistico</label>
                                                     @error('name_art')
                                                     <div class="invalid-feedback">{{$message}}</div>
@@ -27,7 +27,7 @@
                                                 </div>
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control @error('name_art') is-invalid @enderror"
-                                                           id="nombre_real" placeholder="nombre" name="id_persona">
+                                                           id="nombre_real" placeholder="nombre" name="id_persona" value="{{old("nombre_art")}}">
                                                     <label for="nombre_real">Nombre Real</label>
                                                     @error('name_art')
                                                     <div class="invalid-feedback">{{$message}}</div>

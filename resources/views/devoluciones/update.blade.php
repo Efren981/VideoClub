@@ -23,21 +23,21 @@
                                                     @csrf
                                                     @method("PUT")
                                                     <div class="form-floating mb-3 ">
-                                                        <input type="text" class="form-control @error('id_detalle__prestamos') is-invalid @enderror" 
+                                                        <input type="text" class="form-control @error('idDetallePrestamos') is-invalid @enderror"
                                                         id="id_detalle__prestamos" placeholder=""
                                                                name="id_detalle__prestamos" value="{{$devolucione->id_detalle__prestamos}}">
                                                         <label for="id_detalle__prestamos">Numero de prestamo</label>
-                                                        @error('id_detalle__prestamos')
+                                                        @error('idDetallePrestamos')
                                                             <div class="invalid-feedback">{{$message}}</div>@enderror
                                                     </div>
-                                                    
+
 
                                                     <div class="form-floating mb-3">
-                                                        <input type="date" class="form-control @error('fecha_devolucion') is-invalid @enderror" 
+                                                        <input type="date" class="form-control @error('fechaDevolucion') is-invalid @enderror"
                                                         id="fecha_devolucion" placeholder=""
                                                                name="fecha_devolucion" value="{{$devolucione->fecha_devolucion}}">
                                                         <label for="fecha_devolucion">Fecha de Devolucion</label>
-                                                        @error('fecha_devolucion')
+                                                        @error('fechaDevolucion')
                                                             <div class="invalid-feedback">{{$message}}</div>@enderror
                                                     </div>
 

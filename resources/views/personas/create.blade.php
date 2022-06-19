@@ -16,21 +16,21 @@
                                     <form method="POST" action="{{url("registro_personas")}}">
                                         @csrf
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder=".." name="nombre">
+                                            <input type="text" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder=".." name="nombre" value="{{old("nombre")}}">
                                             <label for="nombre">Nombre</label>
                                             @error('nombre')
                                             <div class="invalid-feedback">{{$message}}<div>
                                                     @enderror
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control @error('apellidoPaterno') is-invalid @enderror" id="ap1" placeholder=".." name="apellidoPaterno">
+                                            <input type="text" class="form-control @error('apellidoPaterno') is-invalid @enderror" id="ap1" placeholder=".." name="apellidoPaterno" value="{{old("apellidoPaterno")}}">
                                             <label for="ap1">Apellido Paterno</label>
                                             @error('apellidoPaterno')
                                             <div class="invalid-feedback">{{$message}}<div>
                                              @enderror
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control @error('apellidoMaterno') is-invalid @enderror" id="ap2"placeholder=".." name="apellidoMaterno">
+                                            <input type="text" class="form-control @error('apellidoMaterno') is-invalid @enderror" id="ap2"placeholder=".." name="apellidoMaterno" value="{{old("apellidoMterno")}}">
                                             <label for="ap2">Apellido Materno</label>
                                             @error('apellidoMaterno')
                                             <div class="invalid-feedback">{{$message}}<div>
