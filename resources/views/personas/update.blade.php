@@ -34,7 +34,18 @@
                                 <label for="newamp">Nuevo apellido materno</label>
                                 @error('apellidoMaterno')
                                 <div class="invalid-feedback">{{$message}}<div>
-                                        @enderror
+                                @enderror
+                            </div>
+                            <div class="form-floating mb-6">
+                                <select class="form-control @error ('genero') is-invalid @enderror" id="rango" name="rango">
+                                    <option selected>Selecciona un rango</option>
+                                    <option selected value="1">Socio</option>
+                                    <option selected value="2">Director</option>
+                                    <option selected value="3">Actor</option>
+                                </select>
+                                @error('genero')
+                                <div class="invalid-feedback">{{$message}}</div>
+                                @enderror
                             </div>
                         </div>
                     </div>
