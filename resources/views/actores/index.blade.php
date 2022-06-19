@@ -15,21 +15,21 @@
                 <div class="col-6">
                     <div class="card">
                         <a href="{{url("actores/create")}}" class="btn btn-dark btn-sm mb-4 text-white"data-toggle="tooltip" title="Cargar nuevo director"><span class="icon-pen"> Nuevo</span></a>
-                        <table class="table card" style="background: #e1e1e8">
+                        <table class="table" style="background: #e1e1e8">
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col" class=" justify-content-center text-center">Nombre Real</th>
                                 <th scope="col" class=" justify-content-center text-center">Nombre Artistico</th>
-
+                                <th scope="col" class=" justify-content-center text-center">Actores</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($datos as $actores)
                                 <tr scope="row">
-
+                                    <th scope="col">{{$loop->index+1}}</th>
                                     <td scope="col">{{$actores->idPersona}}</td>
-                                    <td scope="col">{{$actores->nombreArtisitico}}</td>
+                                    <td scope="col">{{$actores->nombreArtistico}}</td>
                                     <td scope="col"><a href="{{route("actores.edit",$actores->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar personas"><span class="icon-compose">Editar</span></a></td>
                                     <td scope="col"><form action="{{route("actores.destroy",$actores->id)}}" method="post">
                                             @csrf
