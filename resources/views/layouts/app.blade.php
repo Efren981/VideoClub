@@ -53,6 +53,38 @@
                             @endif
                         @else
                             <li class="nav-item">
+                                <a href="{{url("actores")}}" class="nav-link @yield("actores_active")" data-toggle="tooltip" title="Ir a la seccion de socios">Actores</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{url("cintas")}}" class="nav-link @yield("cintas_active")" data-toggle="tooltip" title="Ir a la seccion de socios">Cintas</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{url("devoluciones")}}" class="nav-link @yield("devoluciones_active")" data-toggle="tooltip" title="Ir a la seccion de socios">Devoluciones</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{url("directores")}}" class="nav-link @yield("directores_active")" data-toggle="tooltip" title="Ir a la seccion de socios">Directores</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{url("esperas")}}" class="nav-link @yield("esperas_active")" data-toggle="tooltip" title="Ir a la seccion de socios">Esperas</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{url("peliculas")}}" class="nav-link @yield("peliculas_active")" data-toggle="tooltip" title="Ir a la seccion de socios">Peliculas</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{url("personas")}}" class="nav-link @yield("personas_active")" data-toggle="tooltip" title="Ir a la seccion de socios">Personas</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{url("prestamos")}}" class="nav-link @yield("prestamos_active")" data-toggle="tooltip" title="Ir a la seccion de socios">Prestamos</a>
+                            </li>
+
+                            <li class="nav-item">
                                 <a href="{{url("socios")}}" class="nav-link @yield("socios_active")" data-toggle="tooltip" title="Ir a la seccion de socios">Socios</a>
                             </li>
 
