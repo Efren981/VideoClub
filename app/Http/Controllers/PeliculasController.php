@@ -14,6 +14,8 @@ class PeliculasController extends Controller
      */
     public function index()
     {
+        $peliculas=Peliculas::all();
+        return view('peliculas.index',compact('peliculas'));
         //
     }
 
@@ -24,6 +26,7 @@ class PeliculasController extends Controller
      */
     public function create()
     {
+        return  view('peliculas.create');
         //
     }
 
@@ -35,6 +38,12 @@ class PeliculasController extends Controller
      */
     public function store(Request $request)
     {
+        $pelicula= new Peliculas;
+        $pelicula->id=$request->input('id');
+        $pelicula->titulo=$request->input('titulo');
+        $pelicula->save();
+        return redirect()->route('peliculas.index');
+
         //
     }
 
@@ -57,6 +66,8 @@ class PeliculasController extends Controller
      */
     public function edit(Peliculas $peliculas)
     {
+        $peliculas=Peliculas::finorFail($id);
+        return view('peliculas.edit',compact('peliculas'));
         //
     }
 
@@ -69,6 +80,11 @@ class PeliculasController extends Controller
      */
     public function update(Request $request, Peliculas $peliculas)
     {
+        $peliculas=Peliculas::finOrFail(id);
+        $peliculas->id=$request->input(('id'));
+        $peliculas->titulo=$request->input('titulo');
+        $peliculas->save();
+        return  redirect()->route('peliculas.index');
         //
     }
 
@@ -80,6 +96,9 @@ class PeliculasController extends Controller
      */
     public function destroy(Peliculas $peliculas)
     {
+        $peliculas=Peliculas::findOrFail($id);
+        $peliculas->delete();
+        return redirect()->route('peliculas.index');
         //
     }
 }

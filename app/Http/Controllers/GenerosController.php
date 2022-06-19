@@ -14,6 +14,8 @@ class GenerosController extends Controller
      */
     public function index()
     {
+        $datos=Generos::all();
+        return view('generos.index',compact('datos'));
         //
     }
 
@@ -24,6 +26,7 @@ class GenerosController extends Controller
      */
     public function create()
     {
+        return view('generos.create');
         //
     }
 
@@ -35,6 +38,9 @@ class GenerosController extends Controller
      */
     public function store(Request $request)
     {
+        Generos::create(['descripcionGenero'=>$request->descripcionGenero,
+            ]);
+        return redirect()->route('generos.index');
         //
     }
 
@@ -57,6 +63,7 @@ class GenerosController extends Controller
      */
     public function edit(Generos $generos)
     {
+        return view('generos.update',compact('generos'));
         //
     }
 
@@ -69,6 +76,8 @@ class GenerosController extends Controller
      */
     public function update(Request $request, Generos $generos)
     {
+        $generos->update(['descripcionGenero'=>$request->descripcionGenero]);
+        return redirect()->route('generos.index');
         //
     }
 
@@ -80,6 +89,8 @@ class GenerosController extends Controller
      */
     public function destroy(Generos $generos)
     {
+        $generos->delete();
+        return redirect()->route('generos.index');
         //
     }
 }
