@@ -10,18 +10,18 @@
                 <div class="card-title mt-4">
                     <h4 class="alert alert-primary text-center mx-4">Actualizar Director</h4>
                 </div>
-                <form method="POST" action="{{route("registro_director.update",$registro_director->id)}}">
+                <form method="POST" action="{{route("directores.update",$directore->id)}}">
                     @csrf
                     @method('PUT')
                     <div class="row mx-5 d-flex justify-content-center">
                         <div class="col-10">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="newname" placeholder=".." name="nombre_art" value="{{$registro_director->nombre_art}}">
-                                <label for="newname">Nuevo nombre artistico</label>
+                                <input type="text" class="form-control" id="idPersona" placeholder=".." name="idPersona" value="{{$directore->idPersona}}">
+                                <label for="idPersona">Nuevo Id Persona</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="newapp" placeholder=".." name="id_persona" value="{{$registro_director->id_persona}}">
-                                <label for="newapp">Nuevo apellido paterno</label>
+                                <input type="text" class="form-control" id="nombreArtistico" placeholder=".." name="nombreArtistico" value="{{$directore->nombreArtistico}}">
+                                <label for="nombreArtistico">Nuevo nombre Artistico</label>
                             </div>
                         </div>
                     </div>

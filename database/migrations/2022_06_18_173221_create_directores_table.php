@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('directores', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->foreignId('idPersona')->constrained('personas');
             $table->string('nombreArtistico',100);
+            $table->timestamps();
         });
     }
 

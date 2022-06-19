@@ -14,7 +14,8 @@ class DirectoresController extends Controller
      */
     public function index()
     {
-        //
+        $datos=Directores::all();
+        return view("directores.index",compact("datos"));
     }
 
     /**
@@ -24,7 +25,7 @@ class DirectoresController extends Controller
      */
     public function create()
     {
-        //
+        return  view('directores.create');
     }
 
     /**
@@ -35,7 +36,8 @@ class DirectoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Directores::create(['idPersona'=>$request->idPersona,'nombreArtistico'=>$request->nombreArtistico]);
+        return redirect()->route('directores.index');
     }
 
     /**
@@ -44,7 +46,7 @@ class DirectoresController extends Controller
      * @param  \App\Models\Directores  $directores
      * @return \Illuminate\Http\Response
      */
-    public function show(Directores $directores)
+    public function show(Directores $directore)
     {
         //
     }
@@ -55,9 +57,9 @@ class DirectoresController extends Controller
      * @param  \App\Models\Directores  $directores
      * @return \Illuminate\Http\Response
      */
-    public function edit(Directores $directores)
+    public function edit(Directores $directore)
     {
-        //
+        return view('directores.update',compact("directore"));
     }
 
     /**
@@ -67,9 +69,10 @@ class DirectoresController extends Controller
      * @param  \App\Models\Directores  $directores
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Directores $directores)
+    public function update(Request $request, Directores $directore)
     {
-        //
+        $directore->update(['idPersona'=>$request->idPersona,'nombreArtistico'=>$request->nombreArtistico]);
+        return redirect()->route('directores.index');
     }
 
     /**
@@ -78,8 +81,9 @@ class DirectoresController extends Controller
      * @param  \App\Models\Directores  $directores
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Directores $directores)
+    public function destroy(Directores $directore)
     {
-        //
+        $directore->delete();
+        return redirect()->route('directores.index');
     }
 }
