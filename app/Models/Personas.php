@@ -10,5 +10,6 @@ class Personas extends Model
     use HasFactory;
     protected $fillable=['nombre',
                          'apellidoPaterno',
-                         'apellidoMaterno'];
+                         'apellidoMaterno',
+                         'id_rangos'];
 }

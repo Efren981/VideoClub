@@ -38,10 +38,7 @@ class PeliculasController extends Controller
      */
     public function store(Request $request)
     {
-        $pelicula= new Peliculas;
-        $pelicula->id=$request->input('id');
-        $pelicula->titulo=$request->input('titulo');
-        $pelicula->save();
+        Peliculas::create(["idGenero"=>$request->idGenero,"titulo"=>$request->titulo,]);
         return redirect()->route('peliculas.index');
 
         //
@@ -80,10 +77,7 @@ class PeliculasController extends Controller
      */
     public function update(Request $request, Peliculas $peliculas)
     {
-        $peliculas=Peliculas::finOrFail(id);
-        $peliculas->id=$request->input(('id'));
-        $peliculas->titulo=$request->input('titulo');
-        $peliculas->save();
+
         return  redirect()->route('peliculas.index');
         //
     }
@@ -96,8 +90,7 @@ class PeliculasController extends Controller
      */
     public function destroy(Peliculas $peliculas)
     {
-        $peliculas=Peliculas::findOrFail($id);
-        $peliculas->delete();
+
         return redirect()->route('peliculas.index');
         //
     }

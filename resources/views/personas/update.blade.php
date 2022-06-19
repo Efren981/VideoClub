@@ -37,13 +37,13 @@
                                 @enderror
                             </div>
                             <div class="form-floating mb-6">
-                                <select class="form-control @error ('genero') is-invalid @enderror" id="rango" name="rango">
+                                <select class="form-control @error ('id_rangos') is-invalid @enderror" id="id_rangos" name="id_rangos">
                                     <option selected>Selecciona un rango</option>
                                     <option selected value="1">Socio</option>
                                     <option selected value="2">Director</option>
                                     <option selected value="3">Actor</option>
                                 </select>
-                                @error('genero')
+                                @error('id_rangos')
                                 <div class="invalid-feedback">{{$message}}</div>
                                 @enderror
                             </div>
