@@ -45,6 +45,8 @@ Route::resource("personas",\App\Http\Controllers\PersonasController::class);
 
 Route::resource("esperas",\App\Http\Controllers\EsperasController::class);
 
+Route::resource("directores",\App\Http\Controllers\DirectoresController::class);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
