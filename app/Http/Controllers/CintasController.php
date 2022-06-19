@@ -14,8 +14,8 @@ class CintasController extends Controller
      */
     public function index()
     {
-        $cintas=Cintas::all();
-        return view('cintas.index',compact('cintas'));
+        $datos=Cintas::all();
+        return view('cintas.index',compact('datos'));
     }
 
     /**
@@ -36,10 +36,7 @@ class CintasController extends Controller
      */
     public function store(Request $request)
     {
-        $cinta=new Cintas();
-        $cinta->id_cinta=$request->input('id_cinta');
-        $cinta->id_pelicula=$request->input('id_pelicula');
-        $cinta->save();
+        Cintas::create(['idPelicula'=>$request->idPelicula,'codigo'=>$request->codigo,]);
         return redirect()->route('cintas.index');
     }
 
@@ -74,8 +71,7 @@ class CintasController extends Controller
      */
     public function update(Request $request, Cintas $cintas)
     {
-        $cinta=Cintas::findOrFail($id_cinta);
-        return view('cintas.edit',compact('cinta'));
+
     }
 
     /**
@@ -86,8 +82,6 @@ class CintasController extends Controller
      */
     public function destroy(Cintas $cintas)
     {
-        $cinta=Cintas::findOrFail($id_cinta);
-        $cinta->delete();
-        return redirect()->route('cintas.index');
+
     }
 }

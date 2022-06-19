@@ -14,7 +14,8 @@ class EsperasController extends Controller
      */
     public function index()
     {
-        //
+        $esperas=Esperas::all();
+        return view("esperas.create",compact("esperas"));
     }
 
     /**
