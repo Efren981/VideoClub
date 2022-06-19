@@ -29,11 +29,11 @@
                             @foreach($datos as $genero)
                                 <tr scope="row">
                                     <th scope="col">{{$loop->index+1}}</th>
-                                    <td scope="col">{{$genero->descripcion_g}}</td>
+                                    <td scope="col">{{$genero->descripcionGenero}}</td>
 
-                                    <td scope="col"><a href="{{route("registro_genero.edit",$genero->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar difusion"><span class="icon-compose">Editar</span></a></td>
+                                    <td scope="col"><a href="{{route("generos.edit",$genero->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar difusion"><span class="icon-compose">Editar</span></a></td>
                                     <td scope="col">
-                                        <form action="{{route("registro_genero.destroy",$genero->id)}}" method="post">
+                                        <form action="{{route("generos.destroy",$genero->id)}}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger btn-sm" type="submit" data-toggle="tooltip" title="Eliminar esta difusion"><span class="icon-bin">Eliminar</span></button>

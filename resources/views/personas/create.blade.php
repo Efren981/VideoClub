@@ -16,30 +16,30 @@
                                     <form method="POST" action="{{url("registro_personas")}}">
                                         @csrf
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="nombre" placeholder=".." name="nombre_p">
+                                            <input type="text" class="form-control @error('nombre') is-invalid @enderror" id="nombre" placeholder=".." name="nombre">
                                             <label for="nombre">Nombre</label>
+                                            @error('nombre')
+                                            <div class="invalid-feedback">{{$message}}<div>
+                                                    @enderror
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="ap1" placeholder=".." name="ap_p">
+                                            <input type="text" class="form-control @error('apellidoPaterno') is-invalid @enderror" id="ap1" placeholder=".." name="apellidoPaterno">
                                             <label for="ap1">Apellido Paterno</label>
+                                            @error('apellidoPaterno')
+                                            <div class="invalid-feedback">{{$message}}<div>
+                                             @enderror
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="ap2"placeholder=".." name="am_p">
+                                            <input type="text" class="form-control @error('apellidoMaterno') is-invalid @enderror" id="ap2"placeholder=".." name="apellidoMaterno">
                                             <label for="ap2">Apellido Materno</label>
-                                        </div>
-                                        <div class="form-floating mb-3">
-                                            <select class="form-control" id="tipo" name="tipo">
-                                                <option value="">Selecciona un valor</option>
-                                                <option value="Socio">Socio</option>
-                                                <option value="Director">Director</option>
-                                                <option value="Actor">Actor</option>
-                                            </select>
-                                            <label for="tipo">Ocupacion</label>
+                                            @error('apellidoMaterno')
+                                            <div class="invalid-feedback">{{$message}}<div>
+                                             @enderror
                                         </div>
                                         <div class="row my-5 d-flex justify-content-center">
                                             <div class="col-3"></div>
                                             <div class="col-3">
-                                                <a href="{{url("registro_personas")}}" class="btn btn-danger mb-4 text-white"><span class="icon-arrow-thin-left" data-toggle="tooltip" title="Regresar al menu principal">Cancelar</span></a>
+                                                <a href="{{url("personas")}}" class="btn btn-danger mb-4 text-white"><span class="icon-arrow-thin-left" data-toggle="tooltip" title="Regresar al menu principal">Cancelar</span></a>
 
                                             </div>
                                             <div class="col-3">

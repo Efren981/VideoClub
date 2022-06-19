@@ -10,38 +10,38 @@
                 <div class="card-title mt-4">
                     <h4 class="alert alert-primary text-center mx-4">Actualizar Persona</h4>
                 </div>
-                <form method="POST" action="{{route("registro_personas.update",$registro_persona->id)}}">
+                <form method="POST" action="{{route("personas.update",$persona->id)}}">
                     @csrf
                     @method('PUT')
                     <div class="row mx-5 d-flex justify-content-center">
                         <div class="col-10">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="newname" placeholder=".." name="nombre_p" value="{{$registro_persona->nombre_p}}">
+                                <input type="text" class="form-control @error('nombre') is-invalid @enderror" id="newname" placeholder=".." name="nombre" value="{{$persona->nombre}}">
                                 <label for="newname">Nuevo nombre</label>
+                                @error('nombre')
+                                <div class="invalid-feedback">{{$message}}<div>
+                                        @enderror
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="newapp" placeholder=".." name="ap_p" value="{{$registro_persona->ap_p}}">
+                                <input type="text" class="form-control @error('apellidoPaterno') is-invalid @enderror" id="newapp" placeholder=".." name="apellidoPaterno" value="{{$persona->apellidoPaterno}}">
                                 <label for="newapp">Nuevo apellido paterno</label>
+                                @error('apellidoPaterno')
+                                <div class="invalid-feedback">{{$message}}<div>
+                                        @enderror
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="newamp" placeholder=".." name=am_p value="{{$registro_persona->am_p}}">
+                                <input type="text" class="form-control @error('apellidoMaterno') is-invalid @enderror" id="newamp" placeholder=".." name=apellidoMaterno value="{{$persona->apellidoMaterno}}">
                                 <label for="newamp">Nuevo apellido materno</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <select class="form-control" id="tipo" name="tipo">
-                                    <option value="">Selecciona tipo</option>
-                                    <option value="1">Socio</option>
-                                    <option value="2">Director</option>
-                                    <option value="3">Actor</option>
-                                </select>
-                                <label for="tipo">Ocupacion</label>
+                                @error('apellidoMaterno')
+                                <div class="invalid-feedback">{{$message}}<div>
+                                        @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row my-5 d-flex justify-content-center">
                         <div class="col-3"></div>
                         <div class="col-3">
-                            <a href="{{url("registro_personas")}}" class="btn btn-danger mb-4 text-white" data-toggle="tooltip" title="Regresar el menu principal">Cancelar</a>
+                            <a href="{{url("personas")}}" class="btn btn-danger mb-4 text-white" data-toggle="tooltip" title="Regresar el menu principal">Cancelar</a>
 
                         </div>
                         <div class="col-3">

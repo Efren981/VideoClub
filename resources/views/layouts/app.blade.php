@@ -77,7 +77,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="{{url("generos")}}" class="nav-link @yield("generos_active")" data-toggle="tooltip" title="Ir a la seccion de Generos">Generos</a>
+                                <a href="{{url("registro_genero")}}" class="nav-link @yield("generos_active")" data-toggle="tooltip" title="Ir a la seccion de Generos">Generos</a>
                             </li>
 
                             <li class="nav-item">

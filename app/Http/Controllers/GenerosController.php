@@ -38,6 +38,7 @@ class GenerosController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(['descripcionGenero'=>"required"],[],['descripcionGenero'=>'desc']);
         Generos::create(['descripcionGenero'=>$request->descripcionGenero,
             ]);
         return redirect()->route('generos.index');
@@ -61,9 +62,9 @@ class GenerosController extends Controller
      * @param  \App\Models\Generos  $generos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Generos $generos)
+    public function edit(Generos $genero)
     {
-        return view('generos.update',compact('generos'));
+        return view('generos.update',compact('genero'));
         //
     }
 
@@ -74,9 +75,10 @@ class GenerosController extends Controller
      * @param  \App\Models\Generos  $generos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Generos $generos)
+    public function update(Request $request, Generos $genero)
     {
-        $generos->update(['descripcionGenero'=>$request->descripcionGenero]);
+        $request->validate(['descripcionGenero'=>"required"],[],['descripcionGenero'=>'desc']);
+        $genero->update(['descripcionGenero'=>$request->descripcionGenero]);
         return redirect()->route('generos.index');
         //
     }
@@ -87,9 +89,9 @@ class GenerosController extends Controller
      * @param  \App\Models\Generos  $generos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Generos $generos)
+    public function destroy(Generos $genero)
     {
-        $generos->delete();
+        $genero->delete();
         return redirect()->route('generos.index');
         //
     }

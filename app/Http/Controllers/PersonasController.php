@@ -14,7 +14,8 @@ class PersonasController extends Controller
      */
     public function index()
     {
-        //
+        $datos=Personas::all();
+        return view('personas.index',compact('datos'));
     }
 
     /**
@@ -24,7 +25,7 @@ class PersonasController extends Controller
      */
     public function create()
     {
-        //
+        return view('personas.create');
     }
 
     /**
@@ -35,7 +36,13 @@ class PersonasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(['nombre'=>'required|max:30|min:3','apellidoPaterno'=>'required|max:30|min:3','apellidoMaterno'=>'required|max:30|min:3']);
+        Personas::create([
+            "nombre"=>$request->nombre,
+            "apellidoPaterno"=>$request->apellidoPaterno,
+            "apellidoMaterno"=>$request->apellidoMaterno,
+        ]);
+        return redirect()->route('personas.index');
     }
 
     /**
@@ -55,9 +62,9 @@ class PersonasController extends Controller
      * @param  \App\Models\Personas  $personas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Personas $personas)
+    public function edit(Personas $persona)
     {
-        //
+        return view('personas.update',compact('persona'));
     }
 
     /**
@@ -67,9 +74,11 @@ class PersonasController extends Controller
      * @param  \App\Models\Personas  $personas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Personas $personas)
+    public function update(Request $request, Personas $persona)
     {
-        //
+        $request->validate(['nombre'=>'required|max:30|min:3|unique:personas','apellidoPaterno'=>'required|max:30|min:3|unique:personas','apellidoMaterno'=>'required|max:30|min:3|unique:personas']);
+        $persona->update(['nombre'=>$request->nombre,'apellidoPaterno'=>$request->apellidoPaterno,'apellidoMaterno'=>$request->apellidoMaterno]);
+        return redirect()->route('personas.index');
     }
 
     /**
@@ -78,8 +87,9 @@ class PersonasController extends Controller
      * @param  \App\Models\Personas  $personas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Personas $personas)
+    public function destroy(Personas $persona)
     {
-        //
+        $persona->delete();
+        return redirect()->route('personas.index');
     }
 }
