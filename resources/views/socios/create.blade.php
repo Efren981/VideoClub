@@ -10,7 +10,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col">
                     <figure class="figure">
-                        <img src="{{asset("/images/video.png")}}" height="150" width="150">
+                        <img src="{{url("img/video.png")}}" height="150" width="150">
                     </figure>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-5">
                         <figure class="figure">
-                            <img src="{{asset("/images/sirueta.jpeg")}}" class="text-lg-end" height="300px" width="300px">
+                            <img src="{{url("img/sirueta.jpeg")}}" class="text-lg-end" height="300px" width="300px">
                         </figure>
                     </div>
                 </div>

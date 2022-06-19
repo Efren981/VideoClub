@@ -15,34 +15,35 @@
                 <div class="col-6">
                     <div class="card">
                         <a href="{{url("socios/create")}}" class="btn btn-dark btn-sm mb-4 text-white"data-toggle="tooltip" title="Cargar nuevo socio"><span class="icon-pen"> Nuevo</span></a>
-                        <table class="table card" style="background: #e1e1e8">
+                        <div class="card-header">
+                        <table class="table" style="background: #e1e1e8">
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col" class=" justify-content-center text-center">Nombre</th>
-                                <th scope="col" class=" justify-content-center text-center">Direccion</th>
-                                <th scope="col" class=" justify-content-center text-center">Telefono</th>
-                                <th colspan="2" scope="col" class=" justify-content-center text-center">Acciones</th>
-
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Direccion</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Acciones</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($datos as $socios)
-                                <tr scope="row">
-                                    <th scope="col">{{$loop->index+1}}</th>
+                                <tr>
+                                    <th scope="row">{{$loop->index+1}}</th>
                                     <td>{{$socios->idPersona}}</td>
                                     <td>{{$socios->direccion}}</td>
                                     <td>{{$socios->telefono}}</td>
-                                    <td><a href="{{route("socios.edit",$socios->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar difusion"><span class="icon-compose">Editar</span></a></td>
+                                    <td><a href="{{route("socios.edit",$socios->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar difusion"><span class="material-symbols-outlined"></span></a>dete</td>
                                     <td><form action="{{route("socios.destroy",$socios->id)}}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger btn-sm" type="submit" data-toggle="tooltip" title="Eliminar esta difusion"><span class="icon-bin">Eliminar</span></button>
-                                    </form></td>
+                                        </form></td></td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>
