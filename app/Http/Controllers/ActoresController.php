@@ -14,8 +14,8 @@ class ActoresController extends Controller
      */
     public function index()
     {
-        $actores=Actores::all();
-        return view("actores.create",compact("actores"));
+        $datos=Actores::all();
+        return view("actores.index",compact("datos"));
     }
 
     /**
