@@ -14,21 +14,19 @@
                         <form method="POST" action="{{url("peliculas")}}">
                             @csrf
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control @error ('direccion') is-invalid @enderror" id="mat" placeholder=".." name="matricula">
-                                <label for="mat">Direccion</label>
-                                @error('direccion')
+                                <select class="form-control @error ('genero') is-invalid @enderror" id="genero" name="genero">
+                                @error('genero')
                                 <div class="invalid-feedback">{{$message}}</div>
                                 @enderror
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control @error ('telefono') is-invalid @enderror" id="nom" placeholder=".." name="nombre">
-                                <label for="nom">Telefono</label>
-                                @error('telefono')
+                                <input type="text" class="form-control @error ('titulo') is-invalid @enderror" id="titulo" name="titulo">
+                                <label for="titulo">Titulo</label>
+                                @error('titulo')
                                 <div class="invalid-feedback">{{$message}}</div>
                                 @enderror
                             </div>
                             <div class="row my-5 d-flex justify-content-center">
-                                <div class="col-3"></div>
                                 <div class="col-3">
                                     <a href="{{url("socios")}}" class="btn btn-danger mb-4 text-white"><span class="icon-arrow-thin-left" data-toggle="tooltip" title="Regresar al menu principal">Cancelar</span></a>
                                 </div>
