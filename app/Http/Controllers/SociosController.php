@@ -14,7 +14,8 @@ class SociosController extends Controller
      */
     public function index()
     {
-        //
+        $datos=Socios::all();
+        return view("socios.index",compact("datos"));
     }
 
     /**
@@ -24,7 +25,7 @@ class SociosController extends Controller
      */
     public function create()
     {
-        //
+        return view("socios.create");
     }
 
     /**
@@ -35,7 +36,18 @@ class SociosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "matricula"=>"required|max:5|min:1|unique:socios",
+            "telefono"=>"required|min:10|max:13|unique:socios",
+            "direccion"=>"required|unique:socios",
+        ],[],["name"=>"nombre","content"=>"contenido"]);
+
+        Socios:: create([
+            "matricula" =>$request->matricula,
+            "telefono" =>$request->telefono,
+            "direccion" =>$request->direccion,
+        ]);
+        return redirect()->route("socios.index");
     }
 
     /**
@@ -57,7 +69,7 @@ class SociosController extends Controller
      */
     public function edit(Socios $socios)
     {
-        //
+        return view('socios.update',compact("socios"));
     }
 
     /**
@@ -69,7 +81,16 @@ class SociosController extends Controller
      */
     public function update(Request $request, Socios $socios)
     {
-        //
+        $request->validate([
+            "matricula"=>"required|max:5|min:1|unique:socios",
+            "telefono"=>"required|min:10|max:13|unique:socios",
+            "direccion"=>"required|unique:socios",
+        ],[],["name"=>"nombre","content"=>"contenido"]);
+
+        $socios->update(["matricula"=>$request->matricula,
+            "telefono"=>$request->telefono,
+            "direccion"=>$request->direccion]);
+        return redirect()->route("socios.index");
     }
 
     /**
@@ -80,6 +101,7 @@ class SociosController extends Controller
      */
     public function destroy(Socios $socios)
     {
-        //
+        $socios->delete();
+        return redirect()->route("socios.index");
     }
 }
