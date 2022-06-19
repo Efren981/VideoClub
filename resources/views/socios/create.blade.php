@@ -20,30 +20,16 @@
                         <form method="POST" action="{{url("socios")}}">
                             @csrf
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control @error ('matricula') is-invalid @enderror" id="mat" placeholder=".." name="matricula">
-                                <label for="mat">Matricula</label>
-                                @error('matricula')
-                                <div class="invalid-feedback">{{$message}}</div>
-                                @enderror
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control @error ('nombre') is-invalid @enderror" id="nom" placeholder=".." name="nombre">
-                                <label for="nom">Nombre completo</label>
-                                @error('nombre')
-                                <div class="invalid-feedback">{{$message}}</div>
-                                @enderror
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control @error ('telefono') is-invalid @enderror" id="tel"placeholder=".." name="telefono">
-                                <label for="tel">Telefono</label>
-                                @error('telefono')
-                                <div class="invalid-feedback">{{$message}}</div>
-                                @enderror
-                            </div>
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control @error ('direccion') is-invalid @enderror" id="dir" placeholder=".." name="direccion" value="{{old('direccion')}}" rows="5"></textarea>
-                                <label for="dir">Direccion</label>
+                                <input type="text" class="form-control @error ('direccion') is-invalid @enderror" id="mat" placeholder=".." name="matricula">
+                                <label for="mat">Direccion</label>
                                 @error('direccion')
+                                <div class="invalid-feedback">{{$message}}</div>
+                                @enderror
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control @error ('telefono') is-invalid @enderror" id="nom" placeholder=".." name="nombre">
+                                <label for="nom">Telefono</label>
+                                @error('telefono')
                                 <div class="invalid-feedback">{{$message}}</div>
                                 @enderror
                             </div>
@@ -51,7 +37,6 @@
                                 <div class="col-3"></div>
                                 <div class="col-3">
                                     <a href="{{url("socios")}}" class="btn btn-danger mb-4 text-white"><span class="icon-arrow-thin-left" data-toggle="tooltip" title="Regresar al menu principal">Cancelar</span></a>
-
                                 </div>
                                 <div class="col-3">
                                     <button class="btn btn-primary" type="submit"><span class="icon-checkmark" data-toggle="tooltip" title="Agregar nueva publicacion">Guardar</span></button>

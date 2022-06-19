@@ -37,13 +37,11 @@ class SociosController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "matricula"=>"required|max:5|min:1|unique:socios",
             "telefono"=>"required|min:10|max:13|unique:socios",
             "direccion"=>"required|unique:socios",
-        ],[],["name"=>"nombre","content"=>"contenido"]);
+            ],[],["name"=>"nombre","content"=>"contenido"]);
 
         Socios:: create([
-            "matricula" =>$request->matricula,
             "telefono" =>$request->telefono,
             "direccion" =>$request->direccion,
         ]);
@@ -82,7 +80,6 @@ class SociosController extends Controller
     public function update(Request $request, Socios $socios)
     {
         $request->validate([
-            "matricula"=>"required|max:5|min:1|unique:socios",
             "telefono"=>"required|min:10|max:13|unique:socios",
             "direccion"=>"required|unique:socios",
         ],[],["name"=>"nombre","content"=>"contenido"]);

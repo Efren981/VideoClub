@@ -19,7 +19,6 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col" class=" justify-content-center text-center">Id</th>
                                 <th scope="col" class=" justify-content-center text-center">Nombre</th>
                                 <th scope="col" class=" justify-content-center text-center">Direccion</th>
                                 <th scope="col" class=" justify-content-center text-center">Telefono</th>
@@ -31,16 +30,15 @@
                             @foreach($datos as $socios)
                                 <tr scope="row">
                                     <th scope="col">{{$loop->index+1}}</th>
-                                    <td scope="col">{{$p->fecha}}</td>
-                                    <td scope="col">{{$socios->nombre}}</td>
-                                    <td scope="col">{{$socios->telefono}}</td>
-                                    <td scope="col">{{$socios->direccion}}</td>
-                                    <td scope="col"><a href="{{route("socios.edit",$socios->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar difusion"><span class="icon-compose">Editar</span></a></td>
-                                    <td scope="col"><form action="{{route("socios.destroy",$socios->id)}}" method="post">
+                                    <td>{{$socios->idPersona}}</td>
+                                    <td>{{$socios->direccion}}</td>
+                                    <td>{{$socios->telefono}}</td>
+                                    <td><a href="{{route("socios.edit",$socios->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar difusion"><span class="icon-compose">Editar</span></a></td>
+                                    <td><form action="{{route("socios.destroy",$socios->id)}}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger btn-sm" type="submit" data-toggle="tooltip" title="Eliminar esta difusion"><span class="icon-bin">Eliminar</span></button>
-                                        </form></td>
+                                    </form></td>
                                 </tr>
                             @endforeach
                             </tbody>
