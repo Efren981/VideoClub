@@ -51,11 +51,7 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-
-
-
                         @else
-
                             <li class="nav-item">
                                 <a href="{{url("socios")}}" class="nav-link @yield("socios_active")" data-toggle="tooltip" title="Ir a la seccion de socios">Socios</a>
                             </li>
