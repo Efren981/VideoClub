@@ -16,13 +16,13 @@
                             href="{{url("prestamos/create")}}"
                             class="btn btn-dark btn-sm mb-4 text-white"
                             data-toggle="tooltip"
-                            title="Cargar nuevo socio">
+                            title="Cargar nueva prestacion">
                     <span
                         class="icon-pen">
                         Generar Prestamo
                     </span>
                         </a>
-                        <table class="table card" style="background: #e1e1e8">
+                        <table class="table" style="background: #e1e1e8">
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -35,7 +35,7 @@
                             @foreach($datos as $prestamos)
                                 <tr>
                                     <td>{{$loop->index+1}}</td>
-                                    <td>{{$prestamos->fecha}}</td>
+                                    <td>{{$prestamos->fechaPrestamo}}</td>
                                     <td scope="col"><a href="{{route("prestamos.edit",$prestamos->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar difusion"><span class="icon-compose">Editar</span></a></td>
                                     <td scope="col"><form action="{{route("prestamos.destroy",$prestamos->id)}}" method="post">
                                             @csrf

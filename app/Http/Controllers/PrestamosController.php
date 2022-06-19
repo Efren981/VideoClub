@@ -27,8 +27,7 @@ class PrestamosController extends Controller
     public function create()
     {
         //
-        $datos=Prestamos::all();
-        return view('prestamos.create',compact('datos'));
+        return view('prestamos.create');
     }
 
     /**
@@ -40,16 +39,8 @@ class PrestamosController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate(["date"=>"required",
-            "socio"=>"required",
-            "pelicula"=>"required",
-            "cinta"=>"required"
-        ]);
-        Prestamos::created([
-            'fecha'=>$request->fecha,
-            'socios'=>$request->socios,
-            'peliculas'=>$request->peliculas,
-            'cintas'=>$request->cintas
+        $request->validate(["fechaPrestamo"=>"required"]);
+        Prestamos::create(['fechaPrestamo'=>$request->fechaPrestamo,
         ]);
         return redirect()->route('prestamos.index');
     }
@@ -63,7 +54,6 @@ class PrestamosController extends Controller
     public function show(Prestamos $prestamos)
     {
         //
-        return view('prestamos.update',compact('prestamos'));
     }
 
     /**
@@ -72,9 +62,9 @@ class PrestamosController extends Controller
      * @param  \App\Models\Prestamos  $prestamos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Prestamos $prestamos)
+    public function edit(Prestamos $prestamo)
     {
-        //
+        return view('prestamos.update',compact('prestamo'));
     }
 
     /**
@@ -84,11 +74,11 @@ class PrestamosController extends Controller
      * @param  \App\Models\Prestamos  $prestamos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Prestamos $prestamos)
+    public function update(Request $request, Prestamos $prestamo)
     {
         //
-        $prestamos->update(['fecha'=>$request->fecha]);
-        return redirect()->route('prestamos.update');
+        $prestamo->update(['fechaPrestamo'=>$request->fechaPrestamo]);
+        return redirect()->route('prestamos.index');
     }
 
     /**
@@ -97,10 +87,10 @@ class PrestamosController extends Controller
      * @param  \App\Models\Prestamos  $prestamos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Prestamos $prestamos)
+    public function destroy(Prestamos $prestamo)
     {
         //
-        $prestamos->delete();
-        return redirect()->route('prestamos.update');
+        $prestamo->delete();
+        return redirect()->route('prestamos.index');
     }
 }
