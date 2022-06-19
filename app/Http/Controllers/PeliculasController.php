@@ -38,8 +38,8 @@ class PeliculasController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'idGenero' => 'required|unique:posts|max:10',
+        $request->validate([
+            'idGenero' => 'required|max:10',
             'titulo' => 'required',
         ]);
         Peliculas::create(["idGenero"=>$request->idGenero,"titulo"=>$request->titulo,]);

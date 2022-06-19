@@ -36,9 +36,9 @@ class EsperasController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'idSocio'=>'required|unique:posts|max:10',
-            'idPelicula'=> 'required|unique:posts|max:10',
+        $request->validate([
+            'idSocio'=>'required|max:10',
+            'idPelicula'=> 'required|max:10',
             'prioridad' => 'required',
             'fecha'=>'required',
             'estado'=>'required',

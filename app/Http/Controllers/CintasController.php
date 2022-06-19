@@ -36,8 +36,8 @@ class CintasController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'idPelicula' => 'required|unique:posts|max:20',
+        $request->validate([
+            'idPelicula' => 'required|max:20',
             'codigo' => 'required',
         ]);
         Cintas::create(['idPelicula'=>$request->idPelicula,'codigo'=>$request->codigo,]);

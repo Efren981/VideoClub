@@ -30,15 +30,7 @@
                                             @enderror
                                         </div>
                                         <div class="form-floating mb-3">
-<<<<<<< HEAD
-                                            <input type="text" class="form-control @error('prioridad') is-invalid @enderror" id="prioridad" placeholder=".." name="prioridad">
-=======
-<<<<<<< HEAD
-                                            <input type="text" class="form-control @error('prioridad') is-invalid @enderror" id="prioridad" placeholder=".." name="prioridad" value="{{old("prioridad")}}}">
-=======
                                             <input type="text" class="form-control @error('prioridad') is-invalid @enderror" id="prioridad" placeholder=".." name="prioridad" value="{{old("prioridad")}}">
->>>>>>> 0a86df09b3e932c17325048f2cb688887ae9cd82
->>>>>>> 449b499f38da5e58a2a4ab2f044b5b2c7efda926
                                             <label for="idSocio">Prioridad</label>
                                             @error('Prioridad')
                                             <div class="invalid-feedback">{{$message}}<div>
