@@ -1,38 +1,51 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <<title>Peliculas</title>
+@extends('layouts.app')
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" crossorigin="anonymous">
-</head>
-<body>
+@section("pelicula")
+    active
+@endsection
+@section("content")
 <div class="container">
-    <h4>Nueva Pelicula</h4>
-    <div class="row">
-        <div class="col-xl-12">
-            <form action="{{route('peliculas.store')}}" method="post">
-                @csrf
-                <div class="form-group">
-                    <label for="id_pelicula">id_genero</label>
-                    <input type="text" class="form-control" name="id_genero" required maxlength="50">
+    <div class="row d-flex justify-content-center">
+        <div class="col-6 ">
+            <h1 class="alert-primary text-center">Crear Pelicula</h1>
+            <div class="card">
+                <div class="row">
+                    <div class="col-7">
+                        <form method="POST" action="{{url("peliculas")}}">
+                            @csrf
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control @error ('direccion') is-invalid @enderror" id="mat" placeholder=".." name="matricula">
+                                <label for="mat">Direccion</label>
+                                @error('direccion')
+                                <div class="invalid-feedback">{{$message}}</div>
+                                @enderror
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control @error ('telefono') is-invalid @enderror" id="nom" placeholder=".." name="nombre">
+                                <label for="nom">Telefono</label>
+                                @error('telefono')
+                                <div class="invalid-feedback">{{$message}}</div>
+                                @enderror
+                            </div>
+                            <div class="row my-5 d-flex justify-content-center">
+                                <div class="col-3"></div>
+                                <div class="col-3">
+                                    <a href="{{url("socios")}}" class="btn btn-danger mb-4 text-white"><span class="icon-arrow-thin-left" data-toggle="tooltip" title="Regresar al menu principal">Cancelar</span></a>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-primary" type="submit"><span class="icon-checkmark" data-toggle="tooltip" title="Agregar nueva publicacion">Guardar</span></button>
+                                </div>
+                                <div class="col-3"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-5">
+                        <figure class="figure">
+                            <img src="{{url("img/sirueta.jpeg")}}" class="text-lg-end" height="300px" width="300px">
+                        </figure>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="titulo">titulo</label>
-                    <input type="text" class="form-control" name="titulo" required maxlength="50">
-                </div>
-
-                <div class="for-group">
-                    <input type="submit" class="btn btn-primary" value="guardar">
-                    <input type="reset" class="btn btn-default" value="cancelar">
-                    <a href="javascript:history.back()">ir al listado</a>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
-</div>
-</body>
-</html>
+@endsection

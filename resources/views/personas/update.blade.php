@@ -20,7 +20,7 @@
                                 <label for="newname">Nuevo nombre</label>
                                 @error('nombre')
                                 <div class="invalid-feedback">{{$message}}<div>
-                                @enderror
+                                        @enderror
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control @error('apellidoPaterno') is-invalid @enderror" id="newapp" placeholder=".." name="apellidoPaterno" value="{{$persona->apellidoPaterno}}">

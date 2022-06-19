@@ -14,8 +14,8 @@ class PeliculasController extends Controller
      */
     public function index()
     {
-        $peliculas=Peliculas::all();
-        return view('peliculas.index',compact('peliculas'));
+        $datos=Peliculas::all();
+        return view('peliculas.index',compact('datos'));
         //
     }
 
