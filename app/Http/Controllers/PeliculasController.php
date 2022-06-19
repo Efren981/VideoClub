@@ -38,6 +38,10 @@ class PeliculasController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'idGenero' => 'required|unique:posts|max:10',
+            'titulo' => 'required',
+        ]);
         Peliculas::create(["idGenero"=>$request->idGenero,"titulo"=>$request->titulo,]);
         return redirect()->route('peliculas.index');
 

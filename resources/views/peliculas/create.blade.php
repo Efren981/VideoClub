@@ -23,8 +23,13 @@
                             <div class="invalid-feedback">{{$message}}</div>
                         @enderror
                     </div>
+<<<<<<< HEAD
                     <div class="form-floating mb-3 mt-3">
                         <input type="text" class="form-control @error ('titulo') is-invalid @enderror" id="titulo" name="titulo" value="{{old("titulo")}}">
+=======
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control @error ('titulo') is-invalid @enderror" id="titulo" name="titulo">
+>>>>>>> 4c8a96a8c96c9674e2f69721f3f830c3375a2d2e
                         <label for="titulo">Titulo</label>
                         @error('titulo')
                         <div class="invalid-feedback">{{$message}}</div>

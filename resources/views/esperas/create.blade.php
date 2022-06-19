@@ -16,14 +16,14 @@
                                     <form method="POST" action="{{url("esperas")}}">
                                         @csrf
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control @error('idSocio') is-invalid @enderror" id="idSocio" placeholder=".." name="idSocio" value="{{old("idSocio")}}">
+                                            <input type="text" class="form-control @error('idSocio') is-invalid @enderror" id="idSocio" placeholder=".." name="idSocio">
                                             <label for="idSocio">Id Socio</label>
                                             @error('idSocio')
                                             <div class="invalid-feedback">{{$message}}<div>
                                             @enderror
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control @error('idPelicula') is-invalid @enderror" id="idPelicula" placeholder=".." name="idPelicula" value="{{old("idPelicula")}}">
+                                            <input type="text" class="form-control @error('idPelicula') is-invalid @enderror" id="idPelicula" placeholder=".." name="idPelicula">
                                             <label for="idPelicula">Id pelicula</label>
                                             @error('idPelicula')
                                                 <div class="invalid-feedback">{{$message}}<div>
@@ -31,24 +31,28 @@
                                         </div>
                                         <div class="form-floating mb-3">
 <<<<<<< HEAD
+                                            <input type="text" class="form-control @error('prioridad') is-invalid @enderror" id="prioridad" placeholder=".." name="prioridad">
+=======
+<<<<<<< HEAD
                                             <input type="text" class="form-control @error('prioridad') is-invalid @enderror" id="prioridad" placeholder=".." name="prioridad" value="{{old("prioridad")}}}">
 =======
                                             <input type="text" class="form-control @error('prioridad') is-invalid @enderror" id="prioridad" placeholder=".." name="prioridad" value="{{old("prioridad")}}">
 >>>>>>> 0a86df09b3e932c17325048f2cb688887ae9cd82
+>>>>>>> 449b499f38da5e58a2a4ab2f044b5b2c7efda926
                                             <label for="idSocio">Prioridad</label>
                                             @error('Prioridad')
                                             <div class="invalid-feedback">{{$message}}<div>
                                             @enderror
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="date" class="form-control @error('fecha') is-invalid @enderror" id="fecha" placeholder=".." name="fecha" value="{{old("fecha")}}">
+                                            <input type="date" class="form-control @error('fecha') is-invalid @enderror" id="fecha" placeholder=".." name="fecha">
                                             <label for="fecha">Fecha</label>
                                             @error('fecha')
                                                 <div class="invalid-feedback">{{$message}}<div>
                                             @enderror
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control @error('estado') is-invalid @enderror" id="estado" placeholder=".." name="estado" value="{{old("estado")}}">
+                                            <input type="text" class="form-control @error('estado') is-invalid @enderror" id="estado" placeholder=".." name="estado">
                                             <label for="estado">Estado</label>
                                             @error('estado')
                                             <div class="invalid-feedback">{{$message}}<div>

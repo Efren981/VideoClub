@@ -36,15 +36,20 @@ class DevolucionesController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(["idDetallePrestamos"=>"numeric|required",
+<<<<<<< HEAD
+        $request->validate(["id_detalle__prestamos"=>"numeric|required",
+            "fecha_devolucion"=>"required",
+=======
+        $validate=$request->validate(["idDetallePrestamos"=>"numeric|required",
             "fechaDevolucion"=>"required",
+>>>>>>> 449b499f38da5e58a2a4ab2f044b5b2c7efda926
             "observaciones"=>"required"],
             [],
-            ['idDetallePrestamos'=>'Numero de prestamo',
-                'fechaDevolucion'=>'fecha de devolucion',
+            ['id_detalle__prestamos'=>'Numero de prestamo',
+                'fecha_devolucion'=>'fecha de devolucion',
                 'observaciones'=>'observaciones']);
-        Devoluciones:: create(["idDetallePrestamos"=>$request->id_detalle__prestamos,
-            "fechaDevolucion"=>$request->fecha_devolucion,
+        Devoluciones:: create(["id_detalle__prestamos"=>$request->id_detalle__prestamos,
+            "fecha_devolucion"=>$request->fecha_devolucion,
             "observaciones"=>$request->observaciones]);
         return redirect()->route("devoluciones.index");
     }
@@ -80,15 +85,15 @@ class DevolucionesController extends Controller
      */
     public function update(Request $request, Devoluciones $devoluciones)
     {
-        $request->validate(["idDetallePrestamos"=>"numeric|required",
-            "fechaDevolucion"=>"required",
+        $request->validate(["id_detalle__prestamos"=>"numeric|required",
+            "fecha_devolucion"=>"required",
             "observaciones"=>"required"],
             [],
-            ['idDetallePrestamos'=>'Numero de prestamo',
-                'fechaDevolucion'=>'fecha de devolucion',
+            ['id_detalle__prestamos'=>'Numero de prestamo',
+                'fecha_devolucion'=>'fecha de devolucion',
                 'observaciones'=>'observaciones']);
-        $devoluciones->update(['idDetallePrestamos'=>$request->id_detalle__prestamos,
-            'fechaDevolucion'=>$request->fecha_devolucion,
+        $devoluciones->update(['id_detalle__prestamos'=>$request->id_detalle__prestamos,
+            'fecha_devolucion'=>$request->fecha_devolucion,
             'observaciones'=>$request->observaciones]);
         return redirect()->route("devoluciones.index");
     }

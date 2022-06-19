@@ -15,7 +15,7 @@
                 <div class="col-6">
                     <div class="card">
                         <a href="{{url("cintas/create")}}" class="btn btn-dark btn-sm mb-4 text-white"data-toggle="tooltip" title="Cargar nueva cinta"><span class="icon-pen"> Nuevo</span></a>
-                        <table class="table card" style="background: #e1e1e8">
+                        <table class="table" style="background: #e1e1e8">
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -30,7 +30,7 @@
                                 <tr scope="row">
                                     <th scope="col">{{$loop->index+1}}</th>
                                     <td scope="col">{{$cintas->idPelicula}}</td>
-                                    <td scope="col">{{$personas->codigo}}</td>
+                                    <td scope="col">{{$cintas->codigo}}</td>
                                     <td scope="col"><a href="{{route("cintas.edit",$cintas->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar esta cinta"><span class="icon-compose">Editar</span></a></td>
                                     <td scope="col"><form action="{{route("cintas.destroy",$cintas->id)}}" method="post">
                                             @csrf
