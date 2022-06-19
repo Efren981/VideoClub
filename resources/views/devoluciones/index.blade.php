@@ -31,7 +31,6 @@
                                         <th scope="col">{{$loop->index+1}}</th>
                                         <td scope="col">{{$genero->idDetallePrestamo}}</td>
                                         <th scope="col">{{$genero->fechaDevolucion}}</th>
-                                        <th scope=""
 
                                         <td scope="col" style="display: flex"><a href="{{route("generos.edit",$genero->id)}}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Editar difusion"><i class="bi bi-plus-lg"></i></a>
                                             <form action="{{route("generos.destroy",$genero->id)}}" method="post">
