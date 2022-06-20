@@ -17,11 +17,11 @@
                                 <form method="POST" action="{{url("devoluciones")}}">
                                     @csrf
                                     <div class="form-floating mb-3 ">
-                                        <input type="text" class="form-control @error('idDetallePrestamos') is-invalid @enderror"
-                                               id="idDetallePrestamos" placeholder=""
-                                               name="idDetallePrestamos">
-                                        <label for="idDetallePrestamos">Numero de prestamo</label>
-                                        @error('idDetallePrestamos')
+                                        <input type="text" class="form-control @error('id_detalles_prestamos') is-invalid @enderror"
+                                               id="id_detalles_prestamos" placeholder=""
+                                               name="id_detalles_prestamos" value="{{(devolucione->id_detalles_prestamos)}}">
+                                        <label for="id_detalles_prestamos">Numero de prestamo</label>
+                                        @error('id_detalles_prestamos')
                                         <div class="invalid-feedback">{{$message}}</div>@enderror
                                     </div>
                                     <div class="form-floating mb-3">

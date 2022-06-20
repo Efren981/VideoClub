@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('devoluciones', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->foreignId('idDetallePrestamo')->constrained('detalles_prestamos');
+            $table->foreignId('id_detalles_prestamos')->constrained('detalles_prestamos');
             $table->date('fechaDevolucion');
             $table->string('observaciones',100);
+            $table->timestamps();
         });
     }
 

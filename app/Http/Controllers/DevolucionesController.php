@@ -41,7 +41,9 @@ class DevolucionesController extends Controller
         ]);
 
         Devoluciones:: create([
-
+            "id_detalles_prestamos"=>$request->id_detalles_prestamos,
+            "fechaDevolucion"=>$request->fechaDevolucion,
+            "observaciones"=>$request->observaciones,
         ]);
         return redirect()->route("devoluciones.index");
     }
@@ -63,9 +65,9 @@ class DevolucionesController extends Controller
      * @param  \App\Models\Devoluciones  $devoluciones
      * @return \Illuminate\Http\Response
      */
-    public function edit(Devoluciones $devoluciones)
+    public function edit(Devoluciones $devolucione)
     {
-        return view('devoluciones.edit',compact("devoluciones"));
+        return view('devoluciones.update',compact("devolucione"));
     }
 
     /**
@@ -75,13 +77,15 @@ class DevolucionesController extends Controller
      * @param  \App\Models\Devoluciones  $devoluciones
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Devoluciones $devoluciones)
+    public function update(Request $request, Devoluciones $devolucione)
     {
         $request->validate([
 
         ]);
-        $devoluciones->update([
-
+        $devolucione->update([
+          "id_detalles_prestamos"=>$request->id_detalles_prestamos,
+          "fechaDevolucion"=>$request->fechaDevolucion,
+          "observaciones"=>$request->observaciones
         ]);
         return redirect()->route("devoluciones.index");
     }

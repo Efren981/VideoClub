@@ -14,8 +14,8 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-6">
                     <div class="card">
-                        <a href="{{url("directores/create")}}" class="btn btn-dark btn-sm mb-4 text-white"data-toggle="tooltip" title="Cargar nuevo director"><span class="icon-pen"> Nuevo</span></a>
-                        <table class="table card" style="background: #e1e1e8">
+                        <a href="{{url("registro_director/create")}}" class="btn btn-dark btn-sm mb-4 text-white"data-toggle="tooltip" title="Cargar nuevo director"><span class="icon-pen"> Nuevo</span></a>
+                        <table class="table" style="background: #e1e1e8">
                             <thead>
                             <tr>
                                 <th scope="col">#</th>

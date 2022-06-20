@@ -9,7 +9,7 @@ class Devoluciones extends Model
 {
     use HasFactory;
     protected $fillable=[
-        "idDetallePrestamo",
+        "id_detalles_prestamos",
         "fechaDevolucion",
         "observaciones",
     ];
