@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,21 +17,35 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource("socios",\App\Http\Controllers\SocioController::class);
+Auth::routes();
 
-Route::resource("registro_personas",\App\Http\Controllers\PersonaController::class);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource("registro_director",\App\Http\Controllers\DirectorController::class);
+Route::resource("socios",\App\Http\Controllers\SociosController::class);
 
-Route::resource("registro_genero",\App\Http\Controllers\GeneroController::class);
+Route::resource("registro_personas",\App\Http\Controllers\PersonasController::class);
 
-Route::resource('cintas',\App\Http\Controllers\CintaController::class);
+Route::resource("registro_director",\App\Http\Controllers\DirectoresController::class);
 
-Route::resource('peliculas',\App\Http\Controllers\PeliculaController::class);
+Route::resource("registro_genero",\App\Http\Controllers\GenerosController::class);
 
-Route::resource("devoluciones",\App\Http\Controllers\DevolucionController::class);
+Route::resource('cintas',\App\Http\Controllers\CintasController::class);
 
-Route::resource('prestamos',\App\Http\Controllers\PrestamoController::class);
+Route::resource('peliculas',\App\Http\Controllers\PeliculasController::class);
+
+Route::resource("devoluciones",\App\Http\Controllers\DevolucionesController::class);
+
+Route::resource('prestamos',\App\Http\Controllers\PrestamosController::class);
+
+Route::resource("actores",\App\Http\Controllers\ActoresController::class);
+
+Route::resource("generos",\App\Http\Controllers\GenerosController::class);
+
+Route::resource("personas",\App\Http\Controllers\PersonasController::class);
+
+Route::resource("esperas",\App\Http\Controllers\EsperasController::class);
+
+Route::resource("directores",\App\Http\Controllers\DirectoresController::class);
 
 Auth::routes();
 
