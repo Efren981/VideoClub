@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Cintas;
 use App\Models\DetallesPrestamo;
 use App\Models\Prestamos;
