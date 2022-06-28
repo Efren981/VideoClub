@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Prestamos;
 use Illuminate\Http\Request;
+use App\Models\Socios;
+
 
 class PrestamosController extends Controller
 {
@@ -26,6 +28,11 @@ class PrestamosController extends Controller
      */
     public function create()
     {
+        $socios=Socios::join("personas","socios.idPersona", "personas.id")
+        ->select("socios.id","personas.nombre","personas.apellidoPaterno", "personas.apellidoMaterno")
+        ->get();
+        dd($socios);
+
         //
         return view('prestamos.create');
     }
