@@ -8,7 +8,7 @@
         <div class="col">
             <div class="row">
                 <div class="col">
-                    <h1 class="text-center mb-5">Personas</h1>
+                    <h1 >Personas</h1>
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
